@@ -13,6 +13,7 @@ export class K8sClientFactory {
     if (process.env.NODE_ENV === 'production') {
       k8sClient = new Client({ config: config.getInCluster() });
     } else {
+      console.log('fetching K8s config from Kubeconfig');
       k8sClient = new Client({ config: config.fromKubeconfig() });
     }
 
