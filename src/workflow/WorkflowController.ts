@@ -61,19 +61,26 @@ export class WorkflowController implements interfaces.Controller {
 
     const credService: CredentialsService = CredentialsService.getInstance();
     const serviceNowCreds: ServiceNowCredentials = await credService.getServiceNowCredentials();
-    //console.log(`servicenow credentials: ${serviceNowCreds.tenant}: ${serviceNowCreds.user} / ${serviceNowCreds.token}`);
+    // tslint:disable-next-line: max-line-length
+    // console.log(`servicenow credentials:${serviceNowCreds.tenant}: ${serviceNowCreds.user} / ${serviceNowCreds.token}`);
 
     const authToken = base64encode(`${serviceNowCreds.user}:${serviceNowCreds.token}`);
-    const serviceNowUrl = `https://${serviceNowCreds.tenant}.service-now.com/api/now/v1/table/incident`; 
+    const serviceNowUrl = `https://${serviceNowCreds.tenant}
+      .service-now.com/api/now/v1/table/incident`;
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': `Basic ${authToken}`,
+      Authorization: `Basic ${authToken}`,
     };
-    const message= '{"short_description":"Test incident creation through keptn", "comments":"These are my comments"}';
-    
+
+    // TODO define payload
+    // tslint:disable-next-line: max-line-length
+    const message = '{"short_description":"Test incident creation through keptn", "comments":"These are my comments"}';
+
+    // error handling has to be included here
     axios.post(serviceNowUrl,
-      message,
-      {headers: headers}).then().catch(() => {});
+               message,
+               {headers: headers}).then().catch(() => {});
+
     await this.messageService.sendMessage(request.body);
 
     response.send(result);
