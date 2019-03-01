@@ -17,6 +17,9 @@ import {
 import axios from 'axios';
 
 import { MessageService } from '../svc/MessageService';
+import { ServiceNowCredentials } from '../lib/types/ServiceNowCredentials';
+import { CredentialsService } from '../svc/CredentialsService';
+import { base64encode } from 'nodejs-base64';
 
 @ApiPath({
   name: 'Workflow',
@@ -56,13 +59,19 @@ export class WorkflowController implements interfaces.Controller {
       result: 'request for triggering the workflow sent to ServiceNow',
     };
 
+    const credService: CredentialsService = CredentialsService.getInstance();
+    const serviceNowCreds: ServiceNowCredentials = await credService.getServiceNowCredentials();
+    //console.log(`servicenow credentials: ${serviceNowCreds.tenant}: ${serviceNowCreds.user} / ${serviceNowCreds.token}`);
+
+    const authToken = base64encode(`${serviceNowCreds.user}:${serviceNowCreds.token}`);
+    const serviceNowUrl = `https://${serviceNowCreds.tenant}.service-now.com/api/now/v1/table/incident`; 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Basic YWRtaW46WnA4SkRpcXBHbU0y',
+      'Authorization': `Basic ${authToken}`,
     };
     const message= '{"short_description":"Test incident creation through keptn", "comments":"These are my comments"}';
     
-    axios.post('https://dev39607.service-now.com/api/now/v1/table/incident',
+    axios.post(serviceNowUrl,
       message,
       {headers: headers}).then().catch(() => {});
     await this.messageService.sendMessage(request.body);
