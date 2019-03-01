@@ -32,6 +32,7 @@ export class CredentialsService {
 
   async getServiceNowCredentials(): Promise<ServiceNowCredentials> {
     const serviceNowCredentials: ServiceNowCredentials = {
+      tenant: '',
       user: '',
       token: '',
     };
@@ -43,6 +44,8 @@ export class CredentialsService {
     if (s.body.items && s.body.items.length > 0) {
       const ghItem = s.body.items.find(item => item.metadata.name === 'servicenow');
       if (ghItem && ghItem.data !== undefined) {
+        // console.log(ghItem.data);
+        serviceNowCredentials.tenant = base64decode(ghItem.data.tenant);
         serviceNowCredentials.user = base64decode(ghItem.data.user);
         serviceNowCredentials.token = base64decode(ghItem.data.token);
       }
