@@ -29,7 +29,7 @@ spec:
         metadata:
         spec:
           container:
-            image: 10.7.254.124:5000/keptn/servicenow-operator:latest
+            image: XXXX/keptn/servicenow-operator:latest
             imagePullPolicy: Always
             env:
 
