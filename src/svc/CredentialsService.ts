@@ -2,9 +2,6 @@ import { ServiceNowCredentials } from '../lib/types/ServiceNowCredentials';
 import { K8sClientFactory } from '../lib/k8s/K8sClientFactory';
 import * as K8sApi from 'kubernetes-client';
 
-//import { KeptnConfigSecretFactory } from '../lib/types/KeptnConfigSecretFactory';
-//import { KeptnGithubCredentialsSecret } from '../lib/types/KeptnGithubCredentialsSecret';
-
 import { base64encode, base64decode } from 'nodejs-base64';
 
 export class CredentialsService {
@@ -22,13 +19,6 @@ export class CredentialsService {
     }
     return CredentialsService.instance;
   }
-
-  // async updateGithubConfig(keptnConfig: KeptnGithubCredentials) {
-  //   const secret = new KeptnConfigSecretFactory().createKeptnConfigSecret(keptnConfig);
-
-  //   const created = await this.updateGithubCredentials(secret);
-  //   console.log(created);
-  // }
 
   async getServiceNowCredentials(): Promise<ServiceNowCredentials> {
     const serviceNowCredentials: ServiceNowCredentials = {
@@ -54,17 +44,4 @@ export class CredentialsService {
     return serviceNowCredentials;
   }
 
-  // private async updateGithubCredentials(secret: KeptnGithubCredentialsSecret) {
-  //   try {
-  //     const deleteResult = await this.k8sClient.api.v1
-  //       .namespaces('keptn').secrets('github-credentials').delete();
-  //     console.log(deleteResult);
-  //   }
-  //   catch (e) { }
-  //   const created = await this.k8sClient.api.v1.namespaces('keptn').secrets.post({
-  //     body: secret,
-  //   });
-
-  //   return created;
-  // }
 }
