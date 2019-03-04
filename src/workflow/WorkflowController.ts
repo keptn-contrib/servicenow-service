@@ -55,7 +55,7 @@ export class WorkflowController implements interfaces.Controller {
     response: express.Response,
     next: express.NextFunction,
   ): Promise<void> {
-    const result = {
+    var result = {
       result: 'request for triggering the workflow sent to ServiceNow',
     };
 
@@ -73,17 +73,37 @@ export class WorkflowController implements interfaces.Controller {
     };
 
     // TODO define payload
-    // tslint:disable-next-line: max-line-length
-    const message = '{"short_description":"Test incident creation through keptn", "comments":"These are my comments"}';
+    const problemDetails = request.body;
+    if (problemDetails && problemDetails.remediationAction !== undefined) {
+      if (problemDetails.remediationAction.includes('service-now.com')) {
+        console.log(`remediation for ServiceNow found: ${problemDetails.remediationAction}`);
 
-    // error handling has to be included here
-    axios.post(serviceNowUrl,
-               message,
-               {headers: headers}).then().catch(() => {});
+        console.log(`problemPayload: ${JSON.stringify(problemDetails)}`);
+        // tslint:disable-next-line: max-line-length
+        const message = '{"short_description":"Test incident creation through keptn", "comments":"These are my comments"}';
+        // error handling has to be included here
+        axios.post(serviceNowUrl,
+                   message,
+                   {headers: headers}).then().catch(() => {});
+        await this.messageService.sendMessage(request.body);
+        response.send(result);
 
-    await this.messageService.sendMessage(request.body);
+      } else {
+        console.log(`no remediation for ServiceNow found.`);
+        result = {
+          result: 'no remediation for Service Now operator found. nothing to do here.',
+        };
+        response.send(result);
+      }
+    } else {
+      console.log(`no remediation found.`);
+      result = {
+        result: 'no remedation action found. nothing to do here.',
+      };
+      response.send(result);
+    }
 
-    response.send(result);
+    
   }
 
 }
