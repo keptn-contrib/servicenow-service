@@ -62,13 +62,13 @@ export class WorkflowController implements interfaces.Controller {
     const credService: CredentialsService = CredentialsService.getInstance();
     const serviceNowCreds: ServiceNowCredentials = await credService.getServiceNowCredentials();
     // tslint:disable-next-line: max-line-length
-    // console.log(`servicenow credentials:${serviceNowCreds.tenant}: ${serviceNowCreds.user} / ${serviceNowCreds.token}`);
+    console.log(`servicenow credentials:${serviceNowCreds.tenant}: ${serviceNowCreds.user} / ${serviceNowCreds.token}`);
 
     const authToken = base64encode(`${serviceNowCreds.user}:${serviceNowCreds.token}`);
     const serviceNowUrl = `https://${serviceNowCreds.tenant}
       .service-now.com/api/now/v1/table/incident`;
     const headers = {
-      'Content-Type': 'application/json',
+      'Content-Type': `application/json`,
       Authorization: `Basic ${authToken}`,
     };
 
