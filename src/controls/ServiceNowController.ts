@@ -16,21 +16,18 @@ import {
 } from 'swagger-express-ts';
 import axios from 'axios';
 
-import { MessageService } from '../svc/MessageService';
-import { ServiceNowCredentials } from '../lib/types/ServiceNowCredentials';
-import { CredentialsService } from '../svc/CredentialsService';
+import { ServiceNowCredentials } from '../types/ServiceNowCredentials';
+import { CredentialsService } from '../services/CredentialsService';
 import { base64encode } from 'nodejs-base64';
-import { ServiceNowIncident } from '../lib/types/ServiceNowIncident';
+import { ServiceNowIncident } from '../types/ServiceNowIncident';
 
 @ApiPath({
-  name: 'Workflow',
+  name: 'ServiceNow',
   path: '/workflow',
   security: { apiKeyHeader: [] },
 })
 @controller('/workflow')
-export class WorkflowController implements interfaces.Controller {
-
-  @inject('MessageService') private readonly messageService: MessageService;
+export class ServiceNowController implements interfaces.Controller {
 
   constructor() { }
 
@@ -110,7 +107,7 @@ export class WorkflowController implements interfaces.Controller {
           };
         }
 
-        await this.messageService.sendMessage(incident);
+        //await this.messageService.sendMessage(incident);
 
       }
     } else {

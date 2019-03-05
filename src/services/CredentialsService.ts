@@ -1,5 +1,5 @@
-import { ServiceNowCredentials } from '../lib/types/ServiceNowCredentials';
-import { K8sClientFactory } from '../lib/k8s/K8sClientFactory';
+import { ServiceNowCredentials } from '../types/ServiceNowCredentials';
+import { K8sClientFactory } from '../lib/K8sClientFactory';
 import * as K8sApi from 'kubernetes-client';
 
 import { base64encode, base64decode } from 'nodejs-base64';

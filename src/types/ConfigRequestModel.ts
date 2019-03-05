@@ -1,4 +1,4 @@
-import { ServiceNowCredentials } from '../ServiceNowCredentials';
+import { ServiceNowCredentials } from './ServiceNowCredentials';
 import { ApiModel, ApiModelProperty } from 'swagger-express-ts';
 
 @ApiModel({

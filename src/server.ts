@@ -10,32 +10,17 @@ import {
 import * as swagger from 'swagger-express-ts';
 
 // import controllers
-import './config/ConfigController';
-import './auth/AuthController';
-// import './project/ProjectController';
-// import './service/ServiceController';
-import './workflow/WorkflowController';
-
-// import models
-import './config/ConfigRequestModel';
-import './auth/AuthRequestModel';
-import './workflow/WorkflowRequestModel';
+import './controls/ServiceNowController';
 
 // tslint:disable-next-line: import-name
 import RequestLogger = require('./middleware/requestLogger');
-import authenticator = require('./middleware/authenticator');
 import * as path from 'path';
-import { MessageService } from './svc/MessageService';
 
 const port: number = Number(process.env.PORT) || 5001; // or from a configuration file
 const swaggerUiAssetPath = require('swagger-ui-dist').getAbsoluteFSPath();
-// import models
 
 // set up container
 const container = new Container();
-
-// set up bindings
-container.bind<MessageService>('MessageService').to(MessageService);
 
 // create server
 const server = new InversifyExpressServer(container);
@@ -63,9 +48,9 @@ server.setConfig((app: any) => {
       },
     }),
   );
-  if (process.env.NODE_ENV === 'production') {
-    app.use(authenticator);
-  }
+  // if (process.env.NODE_ENV === 'production') {
+  //   app.use(authenticator);
+  // }
 });
 
 server.setErrorConfig((app: any) => {
