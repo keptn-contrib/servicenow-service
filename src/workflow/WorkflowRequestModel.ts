@@ -4,7 +4,7 @@ import { ApiModel, ApiModelProperty, SwaggerDefinitionConstant } from 'swagger-e
   description: '',
   name: 'WorkflowRequestModel',
 })
-export class ProjectRequestModel {
+export class WorkflowRequestModel {
   @ApiModelProperty({
     description: 'Object containing the workflow information',
     example: [{
