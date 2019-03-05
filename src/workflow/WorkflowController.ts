@@ -55,7 +55,7 @@ export class WorkflowController implements interfaces.Controller {
     response: express.Response,
     next: express.NextFunction,
   ): Promise<void> {
-    var result = {
+    let result = {
       result: 'request for triggering the workflow sent to ServiceNow',
     };
 
@@ -74,18 +74,23 @@ export class WorkflowController implements interfaces.Controller {
 
     // TODO define payload
     const problemDetails = request.body;
+    console.log(`problemPayload: ${JSON.stringify(problemDetails)}`);
+
     if (problemDetails && problemDetails.remediationAction !== undefined) {
       if (problemDetails.remediationAction.includes('service-now.com')) {
         console.log(`remediation for ServiceNow found: ${problemDetails.remediationAction}`);
+        let message = problemDetails;
+        message.source = 'keptn';
 
-        console.log(`problemPayload: ${JSON.stringify(problemDetails)}`);
-        // tslint:disable-next-line: max-line-length
-        const message = '{"short_description":"Test incident creation through keptn", "comments":"These are my comments"}';
         // error handling has to be included here
         axios.post(serviceNowUrl,
                    message,
                    {headers: headers}).then().catch(() => {});
-        await this.messageService.sendMessage(request.body);
+        await this.messageService.sendMessage(message);
+
+        result = {
+          result: 'request for triggering the workflow sent to ServiceNow',
+        };
         response.send(result);
 
       } else {
@@ -98,12 +103,11 @@ export class WorkflowController implements interfaces.Controller {
     } else {
       console.log(`no remediation found.`);
       result = {
-        result: 'no remedation action found. nothing to do here.',
+        result: 'no remediation action found. nothing to do here.',
       };
       response.send(result);
     }
 
-    
   }
 
 }
