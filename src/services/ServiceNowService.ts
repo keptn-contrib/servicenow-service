@@ -8,6 +8,7 @@ import { base64decode, base64encode } from 'nodejs-base64';
 import { ServiceNowController } from '../controls/ServiceNowController';
 import axios from 'axios';
 import { CloudEvent } from 'cloudevent';
+import { DynatraceCredentials } from '../types/DynatraceCredentials';
 
 const decamelize = require('decamelize');
 //const Mustache = require('mustache');
@@ -43,49 +44,92 @@ export class ServiceNowService {
     }
   }
 
-  async createIncident(incident : CloudEvent) : Promise<boolean> {
+  async createIncident(problem : CloudEvent) : Promise<boolean> {
     console.log(`[ServiceNowService] creating incident in ServiceNow`);
 
-    const headers = {
-      'Content-Type': `application/json`,
-      Authorization: `Basic ${ServiceNowService.authToken}`,
-    };
+    const problemDetails = await this.getDynatraceDetails(problem);
 
-    const problemDetails = incident.data;
-    // console.log(`problemPayload: ${JSON.stringify(problemDetails)}`);
+    console.log(`problemDetails: ${JSON.stringify(problemDetails)}`);
 
-    if (problemDetails && problemDetails.RemediationAction !== undefined) {
-      if (problemDetails.RemediationAction.includes('service-now.com')) {
-        console.log(`remediation for ServiceNow found: ${problemDetails.RemediationAction}`);
-        const incident : ServiceNowIncident = {
-          problem_id: problemDetails.ProblemID,
-          short_description: problemDetails.ProblemTitle,
-          description: problemDetails.ImpactedEntity,
-          category: 'software',
-          comments: 'incident created by keptn',
-          assigned_to: 'luke.wilson@example.com',
-        };
+    const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
+    if (remediationProvider != null && remediationProvider.includes('service-now')) {
+      console.log(`remediationProvider is ServiceNow`);
 
-        // error handling has to be included here
-        try {
-          console.log(`incident: ${incident}`);
-          const response = await axios.post(ServiceNowService.url, incident, {headers: headers});
-          console.log(response);
+      // create headers & payload
+      const headers = {
+        'Content-Type': `application/json`,
+        Authorization: `Basic ${ServiceNowService.authToken}`,
+      };
+      const incident : ServiceNowIncident = {
+        problem_id: problem.data.ProblemID,
+        short_description: `${problem.data.ProblemTitle} PID: ${problem.data.ProblemID}`,
+        description: problem.data.ImpactedEntity,
+        category: 'software',
+        comments: 'incident created by keptn',
+        assigned_to: problemDetails.events[0].customProperties.Approver,
+      };
+      try {
+        console.log(`incident: ${JSON.stringify(incident)}`);
+        const response = await axios.post(ServiceNowService.url, incident, {headers: headers});
+        console.log(response);
 
-        } catch (error) {
-          console.log(error);
-
-        }
-
-        // await this.messageService.sendMessage(incident);
-
+      } catch (error) {
+        console.log(error);
+        return false;
       }
     } else {
-      console.log(`no remediation found.`);
-      // return false;
+      return false;
+    }
+    return true;
+  }
+
+  async getRemedationProvider(problemDetails) : Promise<string> {
+    if (problemDetails.customProperties !== undefined && problemDetails.customProperties.RemediationProvider !== undefined) {
+      return problemDetails.customProperties.RemediationProvider;
+    }
+    return null;
+  }
+
+  async getDynatraceDetails(problem : CloudEvent) : Promise<any> {
+    const credService: CredentialsService = CredentialsService.getInstance();
+    const dynatraceCredentials : DynatraceCredentials = await credService.getDynatraceCredentials();
+
+    console.log(`dt credentials: ${dynatraceCredentials.tenant} / ${dynatraceCredentials.token}`);
+
+    let problemDetails = {};
+
+    if (problem.data.ProblemDetails !== undefined) {
+      const entityId = problem.data.ProblemDetails.rankedEvents[0].entityId;
+      console.log(`entityId: ${entityId}`);
+
+      const relativeTime = '2hours';
+      const getEventsUrl = `https://${dynatraceCredentials.tenant}.live.dynatrace.com/api/v1/events?entityId=${entityId}&relativeTime=${relativeTime}&eventType=CUSTOM_CONFIGURATION&Api-Token=${dynatraceCredentials.token}`;
+      const headers = {
+        'Content-Type': `application/json`,
+        Authorization: `Basic ${ServiceNowService.authToken}`,
+      };
+      // console.log(`url: ${getEventsUrl}`);
+      try {
+        const response = await axios.get(getEventsUrl);
+        // console.log(`event response:`);
+        // console.log(response);
+
+        problemDetails = response.data;
+
+        if (response.data !== undefined && response.data.events !== undefined) {
+          const eventDetails = response.data.events[0];
+          // console.log(`eventDetails.customProperties.Approver: ${eventDetails.customProperties.Approver}`);
+          // console.log(`eventDetails.customProperties.RemediationProvider: ${eventDetails.customProperties.RemediationProvider}`);
+        }
+
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      console.log(`no problem details provided`);
     }
 
-    return true;
+    return problemDetails;
   }
 
 }
