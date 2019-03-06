@@ -57,7 +57,7 @@ export class ServiceNowController implements interfaces.Controller {
   ): Promise<void> {
     console.log(`handleEvent()`);
 
-    const result = {
+    let result = {
       result: 'success',
     };
 
@@ -71,7 +71,16 @@ export class ServiceNowController implements interfaces.Controller {
       // console.log(`cloudevent: ${JSON.stringify(cloudEvent)}`);
 
       const serviceNowSvc : ServiceNowService = await ServiceNowService.getInstance();
-      const result = await serviceNowSvc.createIncident(cloudEvent);
+      const incidentCreated = await serviceNowSvc.createIncident(cloudEvent);
+      if (incidentCreated) {
+        result = {
+          result: 'incident created',
+        };
+      } else {
+        result = {
+          result: 'no incident created',
+        };
+      }
     }
 
     response.send(result);
