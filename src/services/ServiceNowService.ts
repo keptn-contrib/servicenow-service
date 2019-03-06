@@ -33,7 +33,7 @@ export class ServiceNowService {
       // initialize
       const credService: CredentialsService = CredentialsService.getInstance();
       ServiceNowService.credentials = await credService.getServiceNowCredentials();
-      // tslint:disable-next-line: max-line-length
+      // tslint:disable max-line-length
       console.log(`servicenow credentials: ${ServiceNowService.credentials.tenant}: ${ServiceNowService.credentials.user} / ${ServiceNowService.credentials.token}`);
 
       ServiceNowService.authToken = base64encode(`${ServiceNowService.credentials.user}:${ServiceNowService.credentials.token}`);
@@ -77,19 +77,15 @@ export class ServiceNowService {
 
         }
 
-        //await this.messageService.sendMessage(incident);
+        // await this.messageService.sendMessage(incident);
 
       }
     } else {
       console.log(`no remediation found.`);
-      //return false;
+      // return false;
     }
 
     return true;
   }
 
-
-
- 
-
-  }
+}
