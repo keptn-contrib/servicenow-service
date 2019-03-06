@@ -15,28 +15,30 @@ import {
   ApiOperationDelete,
 } from 'swagger-express-ts';
 import axios from 'axios';
+import { CloudEvent } from 'cloudevent';
 
 import { ServiceNowCredentials } from '../types/ServiceNowCredentials';
 import { CredentialsService } from '../services/CredentialsService';
 import { base64encode } from 'nodejs-base64';
 import { ServiceNowIncident } from '../types/ServiceNowIncident';
+import { ServiceNowService } from '../services/ServiceNowService';
 
 @ApiPath({
-  name: 'ServiceNow',
-  path: '/workflow',
+  name: 'ServiceNow Controller',
+  path: '/',
   security: { apiKeyHeader: [] },
 })
-@controller('/workflow')
+@controller('/')
 export class ServiceNowController implements interfaces.Controller {
 
   constructor() { }
 
   @ApiOperationPost({
-    description: 'Trigger a workflow',
+    description: 'Handle channel events',
     parameters: {
       body: {
-        description: 'Workflow information',
-        model: 'WorkflowRequestModel',
+        description: 'Handle channel events',
+        model: '',
         required: true,
       },
     },
@@ -45,78 +47,34 @@ export class ServiceNowController implements interfaces.Controller {
       },
       400: { description: 'Parameters fail' },
     },
-    summary: 'Trigger a ServiceNow workflow',
+    summary: 'Handle channel events',
   })
   @httpPost('/')
-  public async triggerWorkflow(
+  public async handleEvent(
     request: express.Request,
     response: express.Response,
     next: express.NextFunction,
   ): Promise<void> {
-    let result = {
-      result: 'request for triggering the workflow sent to ServiceNow',
+    console.log(`handleEvent()`);
+
+    const result = {
+      result: 'success',
     };
 
-    const credService: CredentialsService = CredentialsService.getInstance();
-    const serviceNowCreds: ServiceNowCredentials = await credService.getServiceNowCredentials();
-    // tslint:disable-next-line: max-line-length
-    console.log(`servicenow credentials:${serviceNowCreds.tenant}: ${serviceNowCreds.user} / ${serviceNowCreds.token}`);
+    const cloudEvent : CloudEvent = request.body;
+    console.log(`[ServiceNowController]: event is of type '${cloudEvent.type}'`);
 
-    const authToken = base64encode(`${serviceNowCreds.user}:${serviceNowCreds.token}`);
-    // tslint:disable-next-line: max-line-length
-    const serviceNowUrl = `https://${serviceNowCreds.tenant}.service-now.com/api/now/v1/table/incident`;
-    const headers = {
-      'Content-Type': `application/json`,
-      Authorization: `Basic ${authToken}`,
-    };
+    if (request.body.type === 'sh.keptn.events.problem') {
+      console.log(`[ServiceNowController]: passing problem event on to [ServiceNowService]`);
 
-    const problemDetails = request.body;
-    console.log(`problemPayload: ${JSON.stringify(problemDetails)}`);
+      // const incident : CloudEvent = request.body;
+      // console.log(`cloudevent: ${JSON.stringify(cloudEvent)}`);
 
-    // TODO get latest deployment or configuration event
-    // ideas: have a dedicated dynatrace service getting the details?
-
-    if (problemDetails && problemDetails.RemediationAction !== undefined) {
-      if (problemDetails.RemediationAction.includes('service-now.com')) {
-        console.log(`remediation for ServiceNow found: ${problemDetails.RemediationAction}`);
-        const incident : ServiceNowIncident = {
-          problem_id: problemDetails.ProblemID,
-          short_description: problemDetails.ProblemTitle,
-          description: problemDetails.ImpactedEntity,
-          category: 'software',
-          comments: 'incident created by keptn',
-          assigned_to: 'luke.wilson@example.com',
-        };
-
-        result = {
-          result: 'request for triggering the workflow in ServiceNow FAILED',
-        };
-
-        // error handling has to be included here
-        try {
-          console.log(`incident: ${incident}`);
-          const response = await axios.post(serviceNowUrl, incident, {headers: headers});
-          console.log(response);
-          result = {
-            result: 'request for triggering the workflow in ServiceNow succeeded.',
-          };
-        } catch (error) {
-          console.log(error);
-          result = {
-            result: `request for triggering the workflow in ServiceNow FAILED: ${error}`,
-          };
-        }
-
-        //await this.messageService.sendMessage(incident);
-
-      }
-    } else {
-      console.log(`no remediation found.`);
-      result = {
-        result: 'no remediation action found. nothing to do here.',
-      };
-      response.send(result);
+      const serviceNowSvc : ServiceNowService = await ServiceNowService.getInstance();
+      const result = await serviceNowSvc.createIncident(cloudEvent);
     }
+
+    response.send(result);
 
   }
 
