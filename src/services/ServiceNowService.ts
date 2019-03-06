@@ -22,6 +22,7 @@ export class ServiceNowService {
 
   public static authToken;
   public static url;
+  public static credentials : ServiceNowCredentials;
 
   private constructor() {  }
 
@@ -31,12 +32,12 @@ export class ServiceNowService {
 
       // initialize
       const credService: CredentialsService = CredentialsService.getInstance();
-      const serviceNowCreds: ServiceNowCredentials = await credService.getServiceNowCredentials();
+      ServiceNowService.credentials = await credService.getServiceNowCredentials();
       // tslint:disable-next-line: max-line-length
-      console.log(`servicenow credentials:${serviceNowCreds.tenant}: ${serviceNowCreds.user} / ${serviceNowCreds.token}`);
+      console.log(`servicenow credentials: ${ServiceNowService.credentials.tenant}: ${ServiceNowService.credentials.user} / ${ServiceNowService.credentials.token}`);
 
-      ServiceNowService.authToken = base64encode(`${serviceNowCreds.user}:${serviceNowCreds.token}`);
-      ServiceNowService.url = `https://${serviceNowCreds.tenant}.service-now.com/api/now/v1/table/incident`;
+      ServiceNowService.authToken = base64encode(`${ServiceNowService.credentials.user}:${ServiceNowService.credentials.token}`);
+      ServiceNowService.url = `https://${ServiceNowService.credentials.tenant}.service-now.com/api/now/v1/table/incident`;
 
       return ServiceNowService.instance;
     }
@@ -50,8 +51,8 @@ export class ServiceNowService {
       Authorization: `Basic ${ServiceNowService.authToken}`,
     };
 
-    const problemDetails = incident;
-    console.log(`problemPayload: ${JSON.stringify(problemDetails)}`);
+    const problemDetails = incident.data;
+    // console.log(`problemPayload: ${JSON.stringify(problemDetails)}`);
 
     if (problemDetails && problemDetails.RemediationAction !== undefined) {
       if (problemDetails.RemediationAction.includes('service-now.com')) {
