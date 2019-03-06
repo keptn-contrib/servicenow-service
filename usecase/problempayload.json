@@ -1,0 +1,92 @@
+{
+  "State": "OPEN",
+  "ProblemID": "63",
+  "ProblemTitle": "Failure rate increase",
+  "ProblemDetails": {
+    "id": "-1879614985713521063_1551863400000V2",
+    "startTime": 1551863400000,
+    "endTime": -1,
+    "displayName": "63",
+    "impactLevel": "SERVICE",
+    "status": "OPEN",
+    "severityLevel": "ERROR",
+    "commentCount": 0,
+    "tagsOfAffectedEntities": [
+      {
+        "context": "CONTEXTLESS",
+        "key": "SERVICE_TYPE",
+        "value": "BACKEND"
+      },
+      {
+        "context": "CONTEXTLESS",
+        "key": "environment",
+        "value": "juergen"
+      },
+      {
+        "context": "CONTEXTLESS",
+        "key": "app",
+        "value": "carts"
+      },
+      {
+        "context": "ENVIRONMENT",
+        "key": "product",
+        "value": "sockshop"
+      }
+    ],
+    "rankedEvents": [
+      {
+        "startTime": 1551863400000,
+        "endTime": -1,
+        "entityId": "SERVICE-80F384B3502D48B0",
+        "entityName": "carts-ItemsController [juergen]",
+        "severityLevel": "ERROR",
+        "impactLevel": "SERVICE",
+        "eventType": "FAILURE_RATE_INCREASED",
+        "status": "OPEN",
+        "severities": [
+          {
+            "context": "FAILURE_RATE",
+            "value": 0.21040189266204834,
+            "unit": "Ratio"
+          }
+        ],
+        "isRootCause": true,
+        "serviceMethodGroup": "Default service method group",
+        "affectedRequestsPerMinute": 165.6,
+        "userDefinedFailureRateThreshold": 5,
+        "service": "carts-ItemsController [juergen]"
+      }
+    ],
+    "rankedImpacts": [
+      {
+        "entityId": "SERVICE-80F384B3502D48B0",
+        "entityName": "carts-ItemsController [juergen]",
+        "severityLevel": "ERROR",
+        "impactLevel": "SERVICE",
+        "eventType": "FAILURE_RATE_INCREASED"
+      }
+    ],
+    "affectedCounts": {
+      "INFRASTRUCTURE": 0,
+      "SERVICE": 1,
+      "APPLICATION": 0,
+      "ENVIRONMENT": 0
+    },
+    "recoveredCounts": {
+      "INFRASTRUCTURE": 0,
+      "SERVICE": 0,
+      "APPLICATION": 0,
+      "ENVIRONMENT": 0
+    },
+    "hasRootCause": true
+  },
+  "ProblemImpact": "SERVICES",
+  "ImpactedEntity": "Failure rate increase on Web service carts-ItemsController [juergen]",
+  "ImpactedEntities": [
+    {
+      "type": "SERVICE",
+      "name": "carts-ItemsController [juergen]",
+      "entity": "SERVICE-80F384B3502D48B0"
+    }
+  ]
+}
