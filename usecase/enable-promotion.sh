@@ -44,6 +44,7 @@ curl -X POST \
         "source" : "Script",
         "customProperties":{
           "RemediationAction": "Disable Promotion in case of errors!", 
+          "RemediationProvider": "service-now.com",
           "Approver": "luke.wilson@example.com",
           "Comment": "Testing out the new promotion feature of Carts"
         }
