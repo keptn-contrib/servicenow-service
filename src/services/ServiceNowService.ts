@@ -4,19 +4,13 @@ import { ServiceNowIncident } from '../types/ServiceNowIncident';
 import { ServiceNowCredentials } from '../types/ServiceNowCredentials';
 
 import { base64decode, base64encode } from 'nodejs-base64';
-//import { v4 as uuid } from 'uuid';
 import { ServiceNowController } from '../controls/ServiceNowController';
 import axios from 'axios';
 import { CloudEvent } from 'cloudevent';
 import { DynatraceCredentials } from '../types/DynatraceCredentials';
 
 const decamelize = require('decamelize');
-//const Mustache = require('mustache');
 const YAML = require('yamljs');
-
-// Util class
-//const utils = new Utils();
-
 
 export class ServiceNowService {
   private static instance : ServiceNowService;
