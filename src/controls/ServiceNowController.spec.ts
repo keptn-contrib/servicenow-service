@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import 'mocha';
 import * as sinon from 'sinon';
 import { cleanUpMetadata } from 'inversify-express-utils';
-import { WorkflowController } from './ServiceNowController';
+import { ServiceNowController } from './ServiceNowController';
 const nock = require('nock');
 
 describe('authenticator', () => {
