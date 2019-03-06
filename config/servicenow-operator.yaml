@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1alpha1
 kind: Service
 metadata:
-  name: servicenow-operator
+  name: servicenow-service
   namespace: keptn
 spec:
   runLatest:
@@ -16,24 +16,39 @@ spec:
           serviceAccountName: build-bot
           source:
             git:
-              url: https://github.com/keptn/servicenow-operator.git
+              url: https://github.com/keptn/servicenow-service.git
               revision: master
           template:
             name: kaniko
             arguments:
               - name: IMAGE
-                value: docker-registry.cicd.svc.cluster.local:5000/keptn/servicenow-operator:latest
+                value: docker-registry.keptn.svc.cluster.local:5000/keptn/servicenow-service:latest
               - name: DOCKERFILE
                 value: /Dockerfile
       revisionTemplate:
         metadata:
         spec:
           container:
-            image: XXXX/keptn/servicenow-operator:latest
+            image: REGISTRY_URI_PLACEHOLDER:5000/keptn/servicenow-service:latest
             imagePullPolicy: Always
             env:
 
 
-# subscription goes here
+---
+apiVersion: eventing.knative.dev/v1alpha1
+kind: Subscription
+metadata:
+  name: servicenow-sub
+  namespace: keptn
+spec:
+  channel:
+    apiVersion: eventing.knative.dev/v1alpha1
+    kind: Channel
+    name: problem
+  subscriber:
+    ref:
+      apiVersion: serving.knative.dev/v1alpha1
+      kind: Service
+      name: servicenow-service
 
 
