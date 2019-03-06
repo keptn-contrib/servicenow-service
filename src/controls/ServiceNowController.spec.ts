@@ -1,4 +1,4 @@
-// import 'reflect-metadata';
+import 'reflect-metadata';
 import * as express from 'express';
 import { expect } from 'chai';
 import 'mocha';
