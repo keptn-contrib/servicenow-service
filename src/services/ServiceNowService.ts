@@ -39,9 +39,8 @@ export class ServiceNowService {
 
       ServiceNowService.authToken = base64encode(`${ServiceNowService.credentials.user}:${ServiceNowService.credentials.token}`);
       ServiceNowService.url = `https://${ServiceNowService.credentials.tenant}.service-now.com/api/now/v1/table/incident`;
-
-      return ServiceNowService.instance;
     }
+    return ServiceNowService.instance;
   }
 
   async createIncident(problem : CloudEvent) : Promise<boolean> {
