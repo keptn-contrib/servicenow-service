@@ -1,10 +1,7 @@
 import { CredentialsService } from './CredentialsService';
-
 import { ServiceNowIncident } from '../types/ServiceNowIncident';
 import { ServiceNowCredentials } from '../types/ServiceNowCredentials';
-
 import { base64decode, base64encode } from 'nodejs-base64';
-import { ServiceNowController } from '../controls/ServiceNowController';
 import axios from 'axios';
 import { CloudEvent } from 'cloudevent';
 import { DynatraceCredentials } from '../types/DynatraceCredentials';
