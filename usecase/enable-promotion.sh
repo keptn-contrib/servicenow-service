@@ -21,9 +21,6 @@ fi
 url=$1
 percent=$2
 
-echo "turning promotion to $percent %..."
-curl -X GET $url/carts/1/items/promotion/$percent
-
 echo "pushing deployment event to Dynatrace"
 curl -X POST \
   "https://$DT_TENANT_ID.live.dynatrace.com/api/v1/events?Api-Token=$DT_API_TOKEN" \
@@ -52,4 +49,9 @@ curl -X POST \
         }
      }'
 echo ""
+
+echo "turning promotion to $percent %..."
+curl -X GET $url/carts/1/items/promotion/$percent
+
+
 
