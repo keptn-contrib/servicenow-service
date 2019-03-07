@@ -61,7 +61,7 @@ export class ServiceNowService {
         console.log(response);
         const snow_sysid = response.data.result.sys_id;
         console.log(`ServiceNow sys_id of created incident: ${snow_sysid}`);
-        const comment = `Incident in ServiceNow created. [incident_id:${snow_sysid}]`;
+        const comment = `Incident in ServiceNow created. [incident_id:${snow_sysid}]. Incident has been assigned to: ${problemDetails.events[0].customProperties.Approver}`;
         this.commentOnProblem(problem.data.PID, comment);
 
       } catch (error) {
