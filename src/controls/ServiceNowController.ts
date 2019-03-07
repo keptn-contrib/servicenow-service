@@ -71,15 +71,20 @@ export class ServiceNowController implements interfaces.Controller {
       // console.log(`cloudevent: ${JSON.stringify(cloudEvent)}`);
 
       const serviceNowSvc : ServiceNowService = await ServiceNowService.getInstance();
-      const incidentCreated = await serviceNowSvc.createIncident(cloudEvent);
-      if (incidentCreated) {
-        result = {
-          result: 'incident created',
-        };
-      } else {
-        result = {
-          result: 'no incident created',
-        };
+      if (cloudEvent.data.State === 'OPEN') {
+        const incidentCreated = await serviceNowSvc.createIncident(cloudEvent);
+        if (incidentCreated) {
+          result = {
+            result: 'incident created',
+          };
+        } else {
+          result = {
+            result: 'no incident created',
+          };
+        }
+      } else if (cloudEvent.data.State === 'CLOSED') {
+        const incidentUpdated = await serviceNowSvc.updateIncident(cloudEvent);
+
       }
     }
 
