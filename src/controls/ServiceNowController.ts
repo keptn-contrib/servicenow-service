@@ -82,7 +82,7 @@ export class ServiceNowController implements interfaces.Controller {
             result: 'no incident created',
           };
         }
-      } else if (cloudEvent.data.State === 'CLOSED') {
+      } else if (cloudEvent.data.State === 'RESOLVED') {
         const incidentUpdated = await serviceNowSvc.updateIncident(cloudEvent);
 
       }
