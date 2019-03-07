@@ -53,6 +53,3 @@ echo ""
 
 echo "turning promotion to $percent %..."
 curl -X GET $url/carts/1/items/promotion/$percent
-
-
-
