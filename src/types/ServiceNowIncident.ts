@@ -1,8 +1,8 @@
 import { interfaces } from 'inversify-express-utils';
 
 export interface ServiceNowIncident {
-  problem_id: number;
-  short_description: string;
+  problem_id?: number;
+  short_description?: string;
 
   number?: number;
   state?: string;
@@ -14,4 +14,7 @@ export interface ServiceNowIncident {
   description?: string;
   comments?: string;
   assigned_to?: string;
+  incident_state? : string;
+  close_code? : string;
+  close_notes? : string;
 }

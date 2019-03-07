@@ -6,14 +6,11 @@ import axios from 'axios';
 import { CloudEvent } from 'cloudevent';
 import { DynatraceCredentials } from '../types/DynatraceCredentials';
 
-const decamelize = require('decamelize');
-const YAML = require('yamljs');
-
 export class ServiceNowService {
   private static instance : ServiceNowService;
 
-  public static authToken;
-  public static url;
+  public static authToken : string;
+  public static url : string;
   public static credentials : ServiceNowCredentials;
 
   private constructor() {  }
@@ -155,7 +152,6 @@ export class ServiceNowService {
           console.log(`incident: ${JSON.stringify(incident)}`);
           const response = await axios.put(`${ServiceNowService.url}/${snow_sysid}`, incident, {headers: headers});
           console.log(response);
-          //const snow_sysid = response.data.result.sys_id;
           console.log(`ServiceNow sys_id of updated incident: ${snow_sysid}`);
           const comment = `Incident in ServiceNow resolved. [incident_id:${snow_sysid}]`;
           this.commentOnProblem(problem.data.PID, comment);
