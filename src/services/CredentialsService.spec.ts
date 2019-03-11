@@ -22,7 +22,7 @@ describe('CredentialsService', () => {
     expect(snowCreds.token).to.be.a('string');
   }).timeout(5000);
 
-  it('Should return the Dyantrace credentials from a K8s secret', async () => {
+  it('Should return the Dynatrace credentials from a K8s secret', async () => {
     const dtCreds : DynatraceCredentials = await credService.getDynatraceCredentials();
     expect(dtCreds.tenant).to.be.a('string');
     expect(dtCreds.token).to.be.a('string');
