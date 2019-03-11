@@ -15,13 +15,14 @@ import {
   ApiOperationDelete,
 } from 'swagger-express-ts';
 import axios from 'axios';
-import { CloudEvent } from 'cloudevent';
+const { CloudEvent, CloudEventValidator: V, CloudEventTransformer: T } = require('cloudevent');
 
 import { ServiceNowCredentials } from '../types/ServiceNowCredentials';
 import { CredentialsService } from '../services/CredentialsService';
 import { base64encode } from 'nodejs-base64';
 import { ServiceNowIncident } from '../types/ServiceNowIncident';
 import { ServiceNowService } from '../services/ServiceNowService';
+// import { CloudEvent } from 'cloudevent';
 
 @ApiPath({
   name: 'ServiceNow Controller',
@@ -34,11 +35,11 @@ export class ServiceNowController implements interfaces.Controller {
   constructor() { }
 
   @ApiOperationPost({
-    description: 'Handle channel events',
+    description: 'dispatches problem events to ServiceNow',
     parameters: {
       body: {
-        description: 'Handle channel events',
-        model: '',
+        description: 'cloud event with problem description in data block',
+        model: 'CloudEvent',
         required: true,
       },
     },
@@ -61,18 +62,16 @@ export class ServiceNowController implements interfaces.Controller {
       result: 'success',
     };
 
-    const cloudEvent : CloudEvent = request.body;
-    console.log(`[ServiceNowController]: event is of type '${cloudEvent.type}'`);
+    const dtproblem : DynatraceProblem = request.body.data;
+
+    console.log(`[ServiceNowController]: event is of type '${request.body.type}'`);
 
     if (request.body.type === 'sh.keptn.events.problem') {
       console.log(`[ServiceNowController]: passing problem event on to [ServiceNowService]`);
 
-      // const incident : CloudEvent = request.body;
-      // console.log(`cloudevent: ${JSON.stringify(cloudEvent)}`);
-
       const serviceNowSvc : ServiceNowService = await ServiceNowService.getInstance();
-      if (cloudEvent.data.State === 'OPEN') {
-        const incidentCreated = await serviceNowSvc.createIncident(cloudEvent);
+      if (dtproblem.State === 'OPEN') {
+        const incidentCreated = await serviceNowSvc.createIncident(dtproblem);
         if (incidentCreated) {
           result = {
             result: 'incident created',
@@ -82,8 +81,8 @@ export class ServiceNowController implements interfaces.Controller {
             result: 'no incident created',
           };
         }
-      } else if (cloudEvent.data.State === 'RESOLVED') {
-        const incidentUpdated = await serviceNowSvc.updateIncident(cloudEvent);
+      } else if (dtproblem.State === 'RESOLVED') {
+        const incidentUpdated = await serviceNowSvc.updateIncident(dtproblem);
 
       }
     }
