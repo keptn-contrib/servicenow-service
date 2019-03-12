@@ -1,6 +1,8 @@
 import { CredentialsService } from './CredentialsService';
 import { ServiceNowIncident } from '../types/ServiceNowIncident';
 import { ServiceNowCredentials } from '../types/ServiceNowCredentials';
+import { DynatraceProblem } from '../types/DynatraceProblem';
+import { DynatraceEvents } from '../types/DynatraceEvents';
 import { base64decode, base64encode } from 'nodejs-base64';
 import axios from 'axios';
 import { CloudEvent } from 'cloudevent';
@@ -37,10 +39,8 @@ export class ServiceNowService {
     return ServiceNowService.instance;
   }
 
-  async createIncident(problem : DynatraceProblem) : Promise<boolean> {
+  async createIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents) : Promise<boolean> {
     console.log(`[ServiceNowService] creating incident in ServiceNow`);
-
-    const problemDetails = await this.getDynatraceDetails(problem);
 
     // console.log(`problemDetails: ${JSON.stringify(problemDetails)}`);
 
@@ -124,10 +124,8 @@ export class ServiceNowService {
     return null;
   }
 
-  async updateIncident(problem : DynatraceProblem) : Promise<boolean> {
+  async updateIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents) : Promise<boolean> {
     console.log(`updateIncident`);
-
-    const problemDetails = await this.getDynatraceDetails(problem);
 
     const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
     if (remediationProvider != null && remediationProvider.includes('service-now')) {
@@ -183,7 +181,7 @@ export class ServiceNowService {
 
       const relativeTime = '2hours';
       const eventsUrl = `https://${dynatraceCredentials.tenant}.live.dynatrace.com/api/v1/events?entityId=${entityId}&relativeTime=${relativeTime}&eventType=CUSTOM_CONFIGURATION&Api-Token=${dynatraceCredentials.token}`;
-      // console.log(`url: ${getEventsUrl}`);
+      console.log(`url: ${eventsUrl}`);
       try {
         const response = await axios.get(eventsUrl);
         // console.log(`event response:`);
