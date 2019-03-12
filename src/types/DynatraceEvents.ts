@@ -1,4 +1,4 @@
-interface DynatraceEvents {
+export interface DynatraceEvents {
   nextEventStartTms: number;
   nextEventId: number;
   nextCursor: string;

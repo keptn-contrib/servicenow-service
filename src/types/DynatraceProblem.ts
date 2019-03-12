@@ -1,4 +1,4 @@
-interface DynatraceProblem {
+export interface DynatraceProblem {
   State: string;
   ProblemID: string;
   PID: string;
