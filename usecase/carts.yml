@@ -3,7 +3,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: carts
-  namespace: juergen
+  namespace: juergenupgrade
 spec:
   replicas: 1
   template:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: carts
-        image: dynatracesockshop/carts:0.6.0
+        image: jetzlstorfer/keptn-carts:green
         env:
         - name: JAVA_OPTS
           value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
@@ -61,7 +61,7 @@ metadata:
   name: carts
   labels:
     app: carts
-  namespace: juergen
+  namespace: juergenupgrade
 spec:
   ports:
   - name: http
