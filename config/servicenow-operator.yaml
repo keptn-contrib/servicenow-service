@@ -26,7 +26,6 @@ spec:
               - name: DOCKERFILE
                 value: /Dockerfile
       revisionTemplate:
-        metadata:
         spec:
           container:
             image: REGISTRY_URI_PLACEHOLDER:5000/keptn/servicenow-service:latest
