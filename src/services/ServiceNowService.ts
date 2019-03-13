@@ -135,7 +135,7 @@ export class ServiceNowService {
         console.log(comment.content);
         if (comment.context.includes('ServiceNow') && comment.content.includes('incident_id')) {
           if (snowSysid === null) {
-            snowSysid = comment.content.substring(comment.content.indexOf('incident_id:') + 12, comment.content.length - 1);
+            snowSysid = comment.content.substring(comment.content.indexOf('incident_id:') + 12, comment.content.indexOf(']'));
           }
         }
       }
