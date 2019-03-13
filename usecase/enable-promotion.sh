@@ -34,7 +34,7 @@ curl -X POST \
             "tags" : [ 
               {"context": "ENVIRONMENT", "key": "product", "value": "sockshop"},
               {"context": "CONTEXTLESS", "key": "service", "value": "carts"},
-              {"context": "CONTEXTLESS", "key": "environment", "value": "juergen"}
+              {"context": "CONTEXTLESS", "key": "environment", "value": "juergenupgrade"}
             ]
           }
         },
