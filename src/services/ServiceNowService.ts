@@ -56,6 +56,7 @@ export class ServiceNowService {
       const incident : ServiceNowIncident = {
         problem_id: problem.ProblemID,
         short_description: `${problem.ProblemTitle} PID: ${problem.ProblemID}`,
+        u_remediation_url: problemDetails.events[0].customProperties.remediationAction,
         description: problem.ImpactedEntity,
         category: 'software',
         comments: 'incident created by keptn',
