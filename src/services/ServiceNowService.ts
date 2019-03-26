@@ -43,8 +43,8 @@ export class ServiceNowService {
 
         // create headers & payload
         const headers = {
-         'Content-Type': `application/json`,
-         Authorization: `Basic ${ServiceNowService.authToken}`,
+          'Content-Type': `application/json`,
+          Authorization: `Basic ${ServiceNowService.authToken}`,
         };
         const incident : ServiceNowIncident = {
           problem_id: problem.ProblemID,
