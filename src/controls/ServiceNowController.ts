@@ -18,6 +18,9 @@ import axios from 'axios';
 const { CloudEvent, CloudEventValidator: V, CloudEventTransformer: T } = require('cloudevent');
 import { ServiceNowService } from '../services/ServiceNowService';
 import { DynatraceProblem } from '../types/DynatraceProblem';
+import { Utils } from '../lib/Utils';
+
+const utils = new Utils();
 
 @ApiPath({
   name: 'ServiceNow Controller',
@@ -56,7 +59,7 @@ export class ServiceNowController implements interfaces.Controller {
       result: 'success',
     };
 
-    console.log(`[ServiceNowController]: event is of type '${request.body.type}'`);
+    utils.logMessage(request.body.shkeptncontext, `[ServiceNowController]: event is of type '${request.body.type}'`);
 
     if (request.body !== undefined && request.body.type === 'sh.keptn.events.problem') {
       const dtproblem : DynatraceProblem = request.body.data;
