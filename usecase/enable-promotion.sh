@@ -18,6 +18,18 @@ then
   exit 1
 fi
 
+if [ -z $DT_TENANT_ID ]
+then
+  echo "DT_TENANT_ID not set. Please set environment variable accordingly."
+  exit 1
+fi
+
+if [ -z $DT_API_TOKEN ]
+then
+  echo "DT_API_TOKEN not set. Please set environment variable accordingly."
+  exit 1
+fi
+
 url=$1
 percent=$2
 
