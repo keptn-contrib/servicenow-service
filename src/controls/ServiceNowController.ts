@@ -68,8 +68,10 @@ export class ServiceNowController implements interfaces.Controller {
       const serviceNowSvc : ServiceNowService = await ServiceNowService.getInstance();
       if (dtproblem.State === 'OPEN') {
         const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem);
-        const incidentCreated = await serviceNowSvc.createIncident(dtproblem, problemDetails);
-
+        let incidentCreated = false;
+        if (problemDetails !== undefined) {
+          incidentCreated = await serviceNowSvc.createIncident(dtproblem, problemDetails);
+        }
         if (incidentCreated) {
           result = {
             result: 'incident created',
