@@ -35,43 +35,43 @@ export class ServiceNowService {
   async createIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents) : Promise<boolean> {
     console.log(`[ServiceNowService] creating incident in ServiceNow`);
 
-    if (problemDetails.events !== undefined) {
+    if (problemDetails !== undefined && problemDetails.events !== undefined) {
 
       const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
       if (remediationProvider != null && remediationProvider.includes('service-now')) {
-      console.log(`remediationProvider is ServiceNow`);
+        console.log(`remediationProvider is ServiceNow`);
 
-      // create headers & payload
-      const headers = {
-        'Content-Type': `application/json`,
-        Authorization: `Basic ${ServiceNowService.authToken}`,
-      };
-      const incident : ServiceNowIncident = {
-        problem_id: problem.ProblemID,
-        short_description: `${problem.ProblemTitle} PID: ${problem.ProblemID}`,
-        x_320273_keptn_dem_remediation_url: problemDetails.events[0].customProperties.RemediationUrl,
-        description: problem.ImpactedEntity,
-        category: 'software',
-        comments: 'incident created by keptn',
-        assigned_to: problemDetails.events[0].customProperties.Approver,
-      };
-      try {
-        console.log(`incident: ${JSON.stringify(incident)}`);
-        const response = await axios.post(ServiceNowService.url, incident, {headers: headers});
-        console.log(response);
-        const snowSysId = response.data.result.sys_id;
-        console.log(`ServiceNow sys_id of created incident: ${snowSysId}`);
-        const comment = `Incident in ServiceNow created. [incident_id:${snowSysId}]. Incident has been assigned to: ${problemDetails.events[0].customProperties.Approver}`;
-        this.commentOnProblem(problem.PID, comment);
+        // create headers & payload
+        const headers = {
+         'Content-Type': `application/json`,
+         Authorization: `Basic ${ServiceNowService.authToken}`,
+        };
+        const incident : ServiceNowIncident = {
+          problem_id: problem.ProblemID,
+          short_description: `${problem.ProblemTitle} PID: ${problem.ProblemID}`,
+          x_320273_keptn_dem_remediation_url: problemDetails.events[0].customProperties.RemediationUrl,
+          description: problem.ImpactedEntity,
+          category: 'software',
+          comments: 'incident created by keptn',
+          assigned_to: problemDetails.events[0].customProperties.Approver,
+        };
+        try {
+          console.log(`incident: ${JSON.stringify(incident)}`);
+          const response = await axios.post(ServiceNowService.url, incident, {headers: headers});
+          console.log(response);
+          const snowSysId = response.data.result.sys_id;
+          console.log(`ServiceNow sys_id of created incident: ${snowSysId}`);
+          const comment = `Incident in ServiceNow created. [incident_id:${snowSysId}]. Incident has been assigned to: ${problemDetails.events[0].customProperties.Approver}`;
+          this.commentOnProblem(problem.PID, comment);
 
-      } catch (error) {
-        console.log(error);
+        } catch (error) {
+          console.log(error);
+          return false;
+        }
+      } else {
+        console.log('no remediation provider found.');
         return false;
       }
-    } else {
-      console.log('no remediation provider found.');
-      return false;
-    }
       return true;
     } else {
       return false;
