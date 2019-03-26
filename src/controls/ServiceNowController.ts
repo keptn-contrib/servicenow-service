@@ -58,7 +58,7 @@ export class ServiceNowController implements interfaces.Controller {
 
     console.log(`[ServiceNowController]: event is of type '${request.body.type}'`);
 
-    if (request.body.type === 'sh.keptn.events.problem') {
+    if (request.body !== undefined && request.body.type === 'sh.keptn.events.problem') {
       const dtproblem : DynatraceProblem = request.body.data;
       console.log(`[ServiceNowController]: passing problem event on to [ServiceNowService]`);
 
@@ -79,7 +79,15 @@ export class ServiceNowController implements interfaces.Controller {
       } else if (dtproblem.State === 'RESOLVED') {
         const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem);
         const incidentUpdated = await serviceNowSvc.updateIncident(dtproblem, problemDetails);
-
+        if (incidentUpdated) {
+          result = {
+            result: 'incident updated',
+          };
+        } else {
+          result = {
+            result: 'incident not updated',
+          };
+        }
       }
     }
 

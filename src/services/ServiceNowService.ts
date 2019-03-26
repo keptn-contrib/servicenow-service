@@ -7,13 +7,7 @@ import { base64decode, base64encode } from 'nodejs-base64';
 import axios from 'axios';
 import { CloudEvent } from 'cloudevent';
 import { DynatraceCredentials } from '../types/DynatraceCredentials';
-import { ApiPath } from 'swagger-express-ts';
 
-@ApiPath({
-  name: 'ServiceNow Service',
-  path: '/',
-  security: { apiKeyHeader: [] },
-})
 export class ServiceNowService {
   private static instance : ServiceNowService;
 
@@ -25,15 +19,12 @@ export class ServiceNowService {
 
   static async getInstance() {
     if (ServiceNowService.instance === undefined) {
-      console.log("get instance");
       ServiceNowService.instance = new ServiceNowService();
 
       // initialize
       const credService: CredentialsService = CredentialsService.getInstance();
       ServiceNowService.credentials = await credService.getServiceNowCredentials();
       // tslint:disable max-line-length
-      console.log(`servicenow credentials: ${ServiceNowService.credentials.tenant}: ${ServiceNowService.credentials.user} / ${ServiceNowService.credentials.token}`);
-
       ServiceNowService.authToken = base64encode(`${ServiceNowService.credentials.user}:${ServiceNowService.credentials.token}`);
       ServiceNowService.url = `https://${ServiceNowService.credentials.tenant}.service-now.com/api/now/v1/table/incident`;
       console.log(`ServiceNowService.url = ${ServiceNowService.url}`);
@@ -43,8 +34,6 @@ export class ServiceNowService {
 
   async createIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents) : Promise<boolean> {
     console.log(`[ServiceNowService] creating incident in ServiceNow`);
-
-    // console.log(`problemDetails: ${JSON.stringify(problemDetails)}`);
 
     const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
     if (remediationProvider != null && remediationProvider.includes('service-now')) {
@@ -161,13 +150,13 @@ export class ServiceNowService {
           const comment = `Incident in ServiceNow resolved. [incident_id:${snowSysid}]`;
           this.commentOnProblem(problem.PID, comment);
           return true;
-
         } catch (error) {
           console.log(error);
           return false;
         }
       }
     }
+    return false;
   }
 
   async getDynatraceDetails(problem : DynatraceProblem) : Promise<DynatraceEvents> {
@@ -187,17 +176,7 @@ export class ServiceNowService {
       console.log(`url: ${eventsUrl}`);
       try {
         const response = await axios.get(eventsUrl);
-        // console.log(`event response:`);
-        // console.log(response);
-
         problemDetails = response.data;
-
-        if (response.data !== undefined && response.data.events !== undefined) {
-          const eventDetails = response.data.events[0];
-          // console.log(`eventDetails.customProperties.Approver: ${eventDetails.customProperties.Approver}`);
-          // console.log(`eventDetails.customProperties.RemediationProvider: ${eventDetails.customProperties.RemediationProvider}`);
-        }
-
       } catch (error) {
         console.log(error);
       }
