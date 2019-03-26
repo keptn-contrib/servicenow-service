@@ -123,42 +123,38 @@ export class ServiceNowService {
 
   async updateIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents) : Promise<boolean> {
     console.log(`updateIncident`);
-
-    const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
-    if (remediationProvider != null && remediationProvider.includes('service-now')) {
-      const comments = await this.getCommentsOnProblem(problem.PID);
-      let snowSysid = null;
-      for (const comment of comments.data.comments) {
-        console.log(comment.content);
-        if (comment.context.includes('ServiceNow') && comment.content.includes('incident_id')) {
-          if (snowSysid === null) {
-            snowSysid = comment.content.substring(comment.content.indexOf('incident_id:') + 12, comment.content.indexOf(']'));
-          }
+    const comments = await this.getCommentsOnProblem(problem.PID);
+    let snowSysid = null;
+    for (const comment of comments.data.comments) {
+      console.log(comment.content);
+      if (comment.context.includes('ServiceNow') && comment.content.includes('incident_id')) {
+        if (snowSysid === null) {
+          snowSysid = comment.content.substring(comment.content.indexOf('incident_id:') + 12, comment.content.indexOf(']'));
         }
       }
-      // update incident in servicenow
-      if (snowSysid !== null) {
-        const headers = {
-          'Content-Type': `application/json`,
-          Authorization: `Basic ${ServiceNowService.authToken}`,
-        };
-        const incident : ServiceNowIncident = {
-          incident_state: '6', // 6 = resolved, 7 = closed
-          close_code: 'Solved Remotely (Permanently)',
-          close_notes: 'Dynatrace problem closed, therefore incident is resolved',
-        };
-        try {
-          console.log(`incident: ${JSON.stringify(incident)}`);
-          const response = await axios.put(`${ServiceNowService.url}/${snowSysid}`, incident, {headers: headers});
-          console.log(response);
-          console.log(`ServiceNow sys_id of updated incident: ${snowSysid}`);
-          const comment = `Incident in ServiceNow resolved. [incident_id:${snowSysid}]`;
-          this.commentOnProblem(problem.PID, comment);
-          return true;
-        } catch (error) {
-          console.log(error);
-          return false;
-        }
+    }
+    // update incident in servicenow
+    if (snowSysid !== null) {
+      const headers = {
+        'Content-Type': `application/json`,
+        Authorization: `Basic ${ServiceNowService.authToken}`,
+      };
+      const incident : ServiceNowIncident = {
+        incident_state: '6', // 6 = resolved, 7 = closed
+        close_code: 'Solved Remotely (Permanently)',
+        close_notes: 'Dynatrace problem closed, therefore incident is resolved',
+      };
+      try {
+        console.log(`incident: ${JSON.stringify(incident)}`);
+        const response = await axios.put(`${ServiceNowService.url}/${snowSysid}`, incident, {headers: headers});
+        console.log(response);
+        console.log(`ServiceNow sys_id of updated incident: ${snowSysid}`);
+        const comment = `Incident in ServiceNow resolved. [incident_id:${snowSysid}]`;
+        this.commentOnProblem(problem.PID, comment);
+        return true;
+      } catch (error) {
+        console.log(error);
+        return false;
       }
     }
     return false;
