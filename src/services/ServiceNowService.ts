@@ -35,7 +35,7 @@ export class ServiceNowService {
   async createIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents) : Promise<boolean> {
     console.log(`[ServiceNowService] creating incident in ServiceNow`);
 
-    if (problemDetails !== undefined && problemDetails.events !== undefined) {
+    if (problemDetails !== null && problemDetails.events !== undefined) {
 
       const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
       if (remediationProvider != null && remediationProvider.includes('service-now')) {
