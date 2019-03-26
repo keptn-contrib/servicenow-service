@@ -22,6 +22,7 @@ url=$1
 percent=$2
 
 echo "pushing deployment event to Dynatrace"
+
 curl -X POST \
   "https://$DT_TENANT_ID.live.dynatrace.com/api/v1/events?Api-Token=$DT_API_TOKEN" \
   -H 'Content-Type: application/json' \
@@ -40,11 +41,11 @@ curl -X POST \
         },
         "description" : "Changed Promotion percentage",
         "configuration":"Promotion Percentage",
-        "changed":'$percent',
+        "changed": '$percent',
         "source" : "Script",
         "customProperties":{
-          "RemediationAction": "Disable Promotion in case of errors!", 
-          "RemediationActionUrl": '$url/carts/1/items/promotion/0',
+          "RemediationAction": "Disable Promotion in case of errors!",
+          "RemediationUrl": "'$url'/carts/1/items/promotion/0",
           "RemediationProvider": "service-now.com",
           "Approver": "luke.wilson@example.com",
           "Comment": "Testing out the new promotion feature of Carts"
