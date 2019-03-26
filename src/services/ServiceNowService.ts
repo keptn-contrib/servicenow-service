@@ -167,7 +167,7 @@ export class ServiceNowService {
 
     let problemDetails : DynatraceEvents = null;
 
-    if (problem.ProblemDetails !== undefined) {
+    if (problem.ProblemDetails !== undefined && problem.ProblemDetails.rankedEvents !== undefined && problem.ProblemDetails.rankedEvents.length > 0) {
       const entityId = problem.ProblemDetails.rankedEvents[0].entityId;
       console.log(`entityId: ${entityId}`);
 
