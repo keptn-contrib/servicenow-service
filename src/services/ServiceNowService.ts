@@ -35,8 +35,10 @@ export class ServiceNowService {
   async createIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents) : Promise<boolean> {
     console.log(`[ServiceNowService] creating incident in ServiceNow`);
 
-    const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
-    if (remediationProvider != null && remediationProvider.includes('service-now')) {
+    if (problemDetails.events !== undefined) {
+
+      const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
+      if (remediationProvider != null && remediationProvider.includes('service-now')) {
       console.log(`remediationProvider is ServiceNow`);
 
       // create headers & payload
@@ -70,7 +72,10 @@ export class ServiceNowService {
       console.log('no remediation provider found.');
       return false;
     }
-    return true;
+      return true;
+    } else {
+      return false;
+    }
   }
 
   async commentOnProblem(problemId : string, comment : string) : Promise<boolean> {
