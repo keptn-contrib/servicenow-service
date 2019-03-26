@@ -25,6 +25,7 @@ export class ServiceNowService {
 
   static async getInstance() {
     if (ServiceNowService.instance === undefined) {
+      console.log("get instance");
       ServiceNowService.instance = new ServiceNowService();
 
       // initialize
@@ -35,6 +36,7 @@ export class ServiceNowService {
 
       ServiceNowService.authToken = base64encode(`${ServiceNowService.credentials.user}:${ServiceNowService.credentials.token}`);
       ServiceNowService.url = `https://${ServiceNowService.credentials.tenant}.service-now.com/api/now/v1/table/incident`;
+      console.log(`ServiceNowService.url = ${ServiceNowService.url}`);
     }
     return ServiceNowService.instance;
   }

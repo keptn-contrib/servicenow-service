@@ -39,6 +39,8 @@ export class CredentialsService {
         serviceNowCredentials.user = base64decode(secretItem.data.user);
         serviceNowCredentials.token = base64decode(secretItem.data.token);
       }
+    } else {
+      console.log(`could not find ServiceNow secret in keptn namespace!`);
     }
 
     return serviceNowCredentials;
@@ -60,6 +62,8 @@ export class CredentialsService {
         dynatraceCredentials.tenant = base64decode(secretItem.data.DT_TENANT_ID);
         dynatraceCredentials.token = base64decode(secretItem.data.DT_API_TOKEN);
       }
+    } else {
+      console.log(`could not find Dynatrace secret in keptn namespace!`);
     }
 
     return dynatraceCredentials;
