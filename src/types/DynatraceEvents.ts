@@ -19,16 +19,17 @@ interface DynatraceEvent {
   eventStatus: string;
   tags: Tag[];
   id: string;
-  customProperties: CustomProperties;
+  customProperties?: CustomProperties;
   annotationDescription: string;
   source: string;
 }
 
 interface CustomProperties {
-  RemediationProvider: string;
-  Comment: string;
-  Approver: string;
+  RemediationProvider?: string;
+  Comment?: string;
+  Approver?: string;
   RemediationAction?: string;
+  RemediationUrl?: string;
 }
 
 interface Tag {

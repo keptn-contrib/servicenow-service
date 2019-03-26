@@ -3,6 +3,7 @@ import { interfaces } from 'inversify-express-utils';
 export interface ServiceNowIncident {
   problem_id?: string;
   short_description?: string;
+  x_320273_keptn_dem_remediation_url?: string;
 
   number?: number;
   state?: string;
