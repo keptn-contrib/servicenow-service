@@ -59,18 +59,27 @@ export class ServiceNowController implements interfaces.Controller {
       result: 'success',
     };
 
-    utils.logMessage(request.body.shkeptncontext, `[ServiceNowController]: event is of type '${request.body.type}'`);
+    let keptnContext = null;
+    if (request.body !== undefined && request.body.shkeptncontext !== undefined) {
+      keptnContext = request.body.shkeptncontext;
+    }
+
+    utils.logMessage(keptnContext,
+                     `[ServiceNowController]: event is of type '${request.body.type}'`);
 
     if (request.body !== undefined && request.body.type === 'sh.keptn.events.problem') {
       const dtproblem : DynatraceProblem = request.body.data;
-      console.log(`[ServiceNowController]: passing problem event on to [ServiceNowService]`);
+      utils.logMessage(keptnContext,
+                       `[ServiceNowController]: passing problem event on to [ServiceNowService]`);
 
       const serviceNowSvc : ServiceNowService = await ServiceNowService.getInstance();
       if (dtproblem.State === 'OPEN') {
-        const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem);
+        const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem, keptnContext);
         let incidentCreated = false;
         if (problemDetails !== undefined) {
-          incidentCreated = await serviceNowSvc.createIncident(dtproblem, problemDetails);
+          incidentCreated = await serviceNowSvc.createIncident(dtproblem,
+                                                               problemDetails,
+                                                               keptnContext);
         }
         if (incidentCreated) {
           result = {
@@ -82,8 +91,10 @@ export class ServiceNowController implements interfaces.Controller {
           };
         }
       } else if (dtproblem.State === 'RESOLVED') {
-        const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem);
-        const incidentUpdated = await serviceNowSvc.updateIncident(dtproblem, problemDetails);
+        const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem, keptnContext);
+        const incidentUpdated = await serviceNowSvc.updateIncident(dtproblem,
+                                                                   problemDetails,
+                                                                   keptnContext);
         if (incidentUpdated) {
           result = {
             result: 'incident updated',
