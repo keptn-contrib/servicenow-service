@@ -19,7 +19,7 @@ do
   echo "adding item to cart..."
   curl -X POST -H "Content-Type: application/json" -d "{\"itemId\":\"03fef6ac-1896-4ce8-bd69-b798f85c6e0b\", \"unitPrice\":\"99.99\"}" $url/carts/1/items
   i=$((i+1))
-  if [ $i -ge 5 ]
+  if [ $i -ge 100 ]
   then
     curl -X DELETE $url/carts/1
     i=0
