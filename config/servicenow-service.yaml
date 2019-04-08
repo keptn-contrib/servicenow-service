@@ -9,7 +9,7 @@ spec:
       revisionTemplate:
         spec:
           container:
-            image: keptn/servicenow-service:0.2-rc
+            image: keptn/servicenow-service:0.1
             imagePullPolicy: Always
             env:
 
