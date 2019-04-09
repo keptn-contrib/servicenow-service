@@ -6,29 +6,10 @@ metadata:
 spec:
   runLatest:
     configuration:
-      build:
-        apiVersion: build.knative.dev/v1alpha1
-        kind: Build
-        metadata:
-          name: servicenow-builder
-          namespace: keptn
-        spec:
-          serviceAccountName: build-bot
-          source:
-            git:
-              url: https://github.com/keptn/servicenow-service.git
-              revision: master
-          template:
-            name: kaniko
-            arguments:
-              - name: IMAGE
-                value: docker-registry.keptn.svc.cluster.local:5000/keptn/servicenow-service:latest
-              - name: DOCKERFILE
-                value: /Dockerfile
       revisionTemplate:
         spec:
           container:
-            image: REGISTRY_URI_PLACEHOLDER:5000/keptn/servicenow-service:latest
+            image: keptn/servicenow-service:0.1.0
             imagePullPolicy: Always
             env:
 
