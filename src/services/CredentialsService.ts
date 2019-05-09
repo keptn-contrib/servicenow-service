@@ -59,7 +59,7 @@ export class CredentialsService {
     if (s.body.items && s.body.items.length > 0) {
       const secretItem = s.body.items.find(item => item.metadata.name === 'dynatrace');
       if (secretItem && secretItem.data !== undefined) {
-        dynatraceCredentials.tenant = base64decode(secretItem.data.DT_TENANT_ID);
+        dynatraceCredentials.tenant = base64decode(secretItem.data.DT_TENANT);
         dynatraceCredentials.token = base64decode(secretItem.data.DT_API_TOKEN);
       }
     } else {
