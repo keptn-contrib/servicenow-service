@@ -47,7 +47,7 @@ curl -X POST \
             "tags" : [ 
               {"context": "ENVIRONMENT", "key": "application", "value": "sockshop"},
               {"context": "CONTEXTLESS", "key": "service", "value": "carts"},
-              {"context": "CONTEXTLESS", "key": "environment", "value": "production"}
+              {"context": "CONTEXTLESS", "key": "environment", "value": "sockshop-production"}
             ]
           }
         },
@@ -60,7 +60,7 @@ curl -X POST \
           "RemediationUrl": "'$url'/carts/1/items/promotion/0",
           "RemediationProvider": "service-now.com",
           "Approver": "luke.wilson@example.com",
-          "Comment": "Testing out the new promotion feature of Carts"
+          "Comment": "Testing out the new promotion feature of carts."
         }
      }'
 echo ""
