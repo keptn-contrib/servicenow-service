@@ -1,10 +1,9 @@
 #!/bin/bash
 echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX/ 30"
-echo "Press [CTRL+C] to stop."
 
 if [ -z $1 ]
 then
-  echo "Please provide the url as parameter"
+  echo "Please provide the url of the carts service in production as parameter."
   echo ""
   echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX/ 30"
   exit 1
@@ -12,15 +11,15 @@ fi
 
 if [ -z $2 ]
 then
-  echo "Please provide the percent as 2nd parameter"
+  echo "Please provide the percent as second parameter."
   echo ""
   echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX/ 30"
   exit 1
 fi
 
-if [ -z $DT_TENANT_ID ]
+if [ -z $DT_TENANT ]
 then
-  echo "DT_TENANT_ID not set. Please set environment variable accordingly."
+  echo "DT_TENANT not set. Please set environment variable accordingly."
   exit 1
 fi
 
@@ -33,10 +32,10 @@ fi
 url=$1
 percent=$2
 
-echo "pushing deployment event to Dynatrace"
+echo "Pushing deployment event to Dynatrace"
 
 curl -X POST \
-  "https://$DT_TENANT_ID.live.dynatrace.com/api/v1/events?Api-Token=$DT_API_TOKEN" \
+  "https://$DT_TENANT/api/v1/events?api-token=$DT_API_TOKEN" \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
   -d '{
@@ -47,7 +46,7 @@ curl -X POST \
             "tags" : [ 
               {"context": "ENVIRONMENT", "key": "application", "value": "sockshop"},
               {"context": "CONTEXTLESS", "key": "service", "value": "carts"},
-              {"context": "CONTEXTLESS", "key": "environment", "value": "production"}
+              {"context": "CONTEXTLESS", "key": "environment", "value": "sockshop-production"}
             ]
           }
         },
@@ -65,5 +64,5 @@ curl -X POST \
      }'
 echo ""
 
-echo "turning promotion to $percent %..."
+echo "Turning promotion to $percent %..."
 curl -X GET $url/carts/1/items/promotion/$percent
