@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX/ 30"
 
 if [ -z $1 ]
