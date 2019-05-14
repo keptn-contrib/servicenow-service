@@ -32,7 +32,6 @@ spec:
             imagePullPolicy: Always
             env:
 
-
 ---
 apiVersion: eventing.knative.dev/v1alpha1
 kind: Subscription

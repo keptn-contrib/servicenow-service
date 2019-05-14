@@ -84,7 +84,7 @@ export class ServiceNowService {
     const credService: CredentialsService = CredentialsService.getInstance();
     const dynatraceCredentials : DynatraceCredentials = await credService.getDynatraceCredentials();
 
-    const commentUrl = `https://${dynatraceCredentials.tenant}.live.dynatrace.com/api/v1/problem/details/${problemId}/comments?Api-Token=${dynatraceCredentials.token}`;
+    const commentUrl = `https://${dynatraceCredentials.tenant}/api/v1/problem/details/${problemId}/comments?Api-Token=${dynatraceCredentials.token}`;
     const messageBody = {
       comment: comment,
       user: 'keptn',
@@ -104,7 +104,7 @@ export class ServiceNowService {
     const credService: CredentialsService = CredentialsService.getInstance();
     const dynatraceCredentials : DynatraceCredentials = await credService.getDynatraceCredentials();
 
-    const commentUrl = `https://${dynatraceCredentials.tenant}.live.dynatrace.com/api/v1/problem/details/${problemId}/comments?Api-Token=${dynatraceCredentials.token}`;
+    const commentUrl = `https://${dynatraceCredentials.tenant}/api/v1/problem/details/${problemId}/comments?Api-Token=${dynatraceCredentials.token}`;
     let response = {};
     try {
       response = await axios.get(commentUrl);
@@ -165,7 +165,6 @@ export class ServiceNowService {
   async getDynatraceDetails(problem : DynatraceProblem, keptnContext : string) : Promise<DynatraceEvents> {
     const credService: CredentialsService = CredentialsService.getInstance();
     const dynatraceCredentials : DynatraceCredentials = await credService.getDynatraceCredentials();
-
     // console.log(`dt credentials: ${dynatraceCredentials.tenant} / ${dynatraceCredentials.token}`);
 
     let problemDetails : DynatraceEvents = null;
@@ -175,7 +174,7 @@ export class ServiceNowService {
       // console.log(`entityId: ${entityId}`);
 
       const relativeTime = '2hours';
-      const eventsUrl = `https://${dynatraceCredentials.tenant}.live.dynatrace.com/api/v1/events?entityId=${entityId}&relativeTime=${relativeTime}&eventType=CUSTOM_CONFIGURATION&Api-Token=${dynatraceCredentials.token}`;
+      const eventsUrl = `https://${dynatraceCredentials.tenant}/api/v1/events?entityId=${entityId}&relativeTime=${relativeTime}&eventType=CUSTOM_CONFIGURATION&Api-Token=${dynatraceCredentials.token}`;
       // console.log(`url: ${eventsUrl}`);
       try {
         const response = await axios.get(eventsUrl);
