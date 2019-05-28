@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX/ 30"
+echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX 30"
 
 if [ -z $1 ]
 then
   echo "Please provide the url of the carts service in production as parameter."
   echo ""
-  echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX/ 30"
+  echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX 30"
   exit 1
 fi
 
@@ -14,7 +14,7 @@ if [ -z $2 ]
 then
   echo "Please provide the percent as second parameter."
   echo ""
-  echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX/ 30"
+  echo "Usage: ./enable-promotion.sh http://XX.XX.XX.XX 30"
   exit 1
 fi
 
