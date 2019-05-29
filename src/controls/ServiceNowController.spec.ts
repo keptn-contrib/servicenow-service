@@ -18,6 +18,7 @@ describe('authenticator', () => {
     response = {} as express.Response;
     next = {} as express.NextFunction;
   });
+
   it('should call next() if authentication was successful', async () => {
     console.log('test started');
     // WorkflowController.

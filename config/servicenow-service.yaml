@@ -3,16 +3,16 @@ kind: Service
 metadata:
   name: servicenow-service
   namespace: keptn
+  labels:
+    serving.knative.dev/visibility: cluster-local
 spec:
   runLatest:
     configuration:
       revisionTemplate:
         spec:
           container:
-            image: keptn/servicenow-service:0.1.0
+            image: keptn/servicenow-service:0.1.1
             imagePullPolicy: Always
-            env:
-
 
 ---
 apiVersion: eventing.knative.dev/v1alpha1
@@ -30,5 +30,3 @@ spec:
       apiVersion: serving.knative.dev/v1alpha1
       kind: Service
       name: servicenow-service
-
-

@@ -4,7 +4,7 @@ echo "Press [CTRL+C] to stop."
 
 if [ -z $1 ]
 then
-    echo "Please provide the url as parameter"
+    echo "Please provide the url of the carts service in production as parameter."
     echo ""
     echo "Usage: ./add-to-cart.sh http://XX.XX.XX.XX"
     exit 1
@@ -16,7 +16,7 @@ i=0
 while true
 do
   echo ""
-  echo "adding item to cart..."
+  echo "Adding item to cart ..."
   curl -X POST -H "Content-Type: application/json" -d "{\"itemId\":\"03fef6ac-1896-4ce8-bd69-b798f85c6e0b\", \"unitPrice\":\"99.99\"}" $url/carts/1/items
   i=$((i+1))
   if [ $i -ge 100 ]
