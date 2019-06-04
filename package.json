@@ -1,5 +1,5 @@
 {
-  "name": "sh.keptn.core.control",
+  "name": "servicenow-service",
   "version": "0.1.0",
   "description": "keptn service for ServiceNow",
   "main": "dist/server.js",
