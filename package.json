@@ -1,7 +1,7 @@
 {
   "name": "servicenow-service",
   "version": "0.1.0",
-  "description": "keptn service for ServiceNow",
+  "description": "keptn service to implement self-healing capabilities",
   "main": "dist/server.js",
   "scripts": {
     "build-ts": "tsc && npm run html",
