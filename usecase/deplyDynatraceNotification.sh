@@ -25,6 +25,10 @@ curl -X POST \
     {
       "name": "Authorization",
       "value": "Bearer '$Bearer'"
+    },
+    { 
+      "name": "Content-Type", 
+      "value": "application/cloudevents+json" 
     }
   ]
 }'
