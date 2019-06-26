@@ -1,4 +1,4 @@
-# Release Notes DEVELOP
+# Release Notes 0.1.2
 
 ## New Features
 
