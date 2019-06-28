@@ -50,7 +50,7 @@
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
     "kubernetes-client": "^6.8.3",
-    "mocha": "^6.0.2",
+    "mocha": "^6.1.4",
     "mustache": "^3.0.1",
     "nodejs-base64": "^1.0.3",
     "reflect-metadata": "^0.1.13",
