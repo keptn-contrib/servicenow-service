@@ -11,7 +11,7 @@ spec:
       revisionTemplate:
         spec:
           container:
-            image: keptn/servicenow-service:0.1.2.latest
+            image: keptn/servicenow-service:0.1.2
             imagePullPolicy: Always
 
 ---
