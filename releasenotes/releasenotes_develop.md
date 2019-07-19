@@ -1,8 +1,9 @@
-# Release Notes DEVELOP
+# Release Notes x.x.x
 
 ## New Features
+- Change of deployment and service manifest from Knative to Kubernetes resources
 
 ## Fixed Issues
-- Upgrade of axios package version to 0.19.0 [#413](https://github.com/keptn/keptn/issues/413)
+- Update of npm dependencies
 
 ## Known Limitations
