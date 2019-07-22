@@ -1,4 +1,4 @@
 #!/bin/sh
 
-kubectl delete -f config/servicenow-service.yaml --ignore-not-found
-kubectl apply -f config/servicenow-service.yaml
+kubectl delete -f deploy/service.yaml --ignore-not-found
+kubectl apply -f deploy/service.yaml
