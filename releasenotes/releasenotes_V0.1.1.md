@@ -7,4 +7,4 @@
 - Hard-coded URLs for Dynatrace SaaS tenants are removed to also support Dynatrace-managed tenants [#255](https://github.com/keptn/keptn/issues/255)
 - Set visibility of service to cluster-local [#396](https://github.com/keptn/keptn/issues/255)
 
-## Known Limitations
+
