@@ -5,6 +5,10 @@ import * as K8sApi from 'kubernetes-client';
 import { base64encode, base64decode } from 'nodejs-base64';
 import { DynatraceCredentials } from '../types/DynatraceCredentials';
 
+import { Utils } from '../lib/Utils';
+
+const utils = new Utils();
+
 export class CredentialsService {
 
   private static instance: CredentialsService;
@@ -40,7 +44,7 @@ export class CredentialsService {
         serviceNowCredentials.token = base64decode(secretItem.data.token);
       }
     } else {
-      console.log(`could not find ServiceNow secret in keptn namespace!`);
+      utils.logMessage("", "", `could not find ServiceNow secret in keptn namespace!`);
     }
 
     return serviceNowCredentials;
@@ -63,7 +67,7 @@ export class CredentialsService {
         dynatraceCredentials.token = base64decode(secretItem.data.DT_API_TOKEN);
       }
     } else {
-      console.log(`could not find Dynatrace secret in keptn namespace!`);
+      utils.logMessage("", "", `could not find Dynatrace secret in keptn namespace!`);
     }
 
     return dynatraceCredentials;

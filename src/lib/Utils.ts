@@ -1,10 +1,12 @@
 class Utils {
 
-  logMessage(keptnContext: string, message: string) {
+  logMessage(keptnContext: string, eventId: string, message: string, logLevel: string = 'INFO') {
     console.log(JSON.stringify({
       keptnContext: keptnContext,
+      eventId,
       keptnService: 'servicenow-service',
-      logLevel: 'INFO',
+      timestamp: Date.now(),
+      logLevel,
       message: message,
     }));
   }
