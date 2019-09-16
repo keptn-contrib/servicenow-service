@@ -30,19 +30,19 @@ export class ServiceNowService {
       // tslint:disable max-line-length
       ServiceNowService.authToken = base64encode(`${ServiceNowService.credentials.user}:${ServiceNowService.credentials.token}`);
       ServiceNowService.url = `https://${ServiceNowService.credentials.tenant}.service-now.com/api/now/v1/table/incident`;
-      console.log(`ServiceNowService.url = ${ServiceNowService.url}`);
+      utils.logMessage("", "", `ServiceNowService.url = ${ServiceNowService.url}`);
     }
     return ServiceNowService.instance;
   }
 
-  async createIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents, keptnContext : string) : Promise<boolean> {
-    utils.logMessage(keptnContext, `[ServiceNowService] creating incident in ServiceNow`);
+  async createIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents, keptnContext : string, eventId : string) : Promise<boolean> {
+    utils.logMessage(keptnContext, eventId, `[ServiceNowService] creating incident in ServiceNow`);
 
     if (problemDetails !== null && problemDetails.events !== undefined) {
 
       const remediationProvider = await this.getRemedationProvider(problemDetails.events[0]);
       if (remediationProvider != null && remediationProvider.includes('service-now')) {
-        console.log(`remediationProvider is ServiceNow`);
+        utils.logMessage("", "", `remediationProvider is ServiceNow`);
 
         // create headers & payload
         const headers = {
@@ -63,16 +63,16 @@ export class ServiceNowService {
           const response = await axios.post(ServiceNowService.url, incident, {headers: headers});
           // console.log(response);
           const snowSysId = response.data.result.sys_id;
-          utils.logMessage(keptnContext, `ServiceNow sys_id of created incident: ${snowSysId}`);
+          utils.logMessage(keptnContext, eventId, `ServiceNow sys_id of created incident: ${snowSysId}`);
           const comment = `Incident in ServiceNow created. [incident_id:${snowSysId}]. Incident has been assigned to: ${problemDetails.events[0].customProperties.Approver}`;
-          this.commentOnProblem(problem.PID, comment, keptnContext);
+          this.commentOnProblem(problem.PID, comment, keptnContext, eventId);
 
         } catch (error) {
-          utils.logMessage(keptnContext, error);
+          utils.logMessage(keptnContext, eventId, error, 'ERROR');
           return false;
         }
       } else {
-        utils.logMessage(keptnContext, 'no remediation provider found.');
+        utils.logMessage(keptnContext, eventId, 'no remediation provider found.');
         return false;
       }
       return true;
@@ -80,7 +80,7 @@ export class ServiceNowService {
     return false;
   }
 
-  async commentOnProblem(problemId : string, comment : string, keptnContext : string) : Promise<boolean> {
+  async commentOnProblem(problemId : string, comment : string, keptnContext : string, eventId : string) : Promise<boolean> {
     const credService: CredentialsService = CredentialsService.getInstance();
     const dynatraceCredentials : DynatraceCredentials = await credService.getDynatraceCredentials();
 
@@ -94,13 +94,13 @@ export class ServiceNowService {
       const response = await axios.post(commentUrl, messageBody);
       // console.log(response);
     } catch (error) {
-      utils.logMessage(keptnContext, error);
+      utils.logMessage(keptnContext, eventId, error, 'ERROR');
       return false;
     }
     return true;
   }
 
-  async getCommentsOnProblem(problemId : string, keptnContext : string) : Promise<any> {
+  async getCommentsOnProblem(problemId : string, keptnContext : string, eventId : string) : Promise<any> {
     const credService: CredentialsService = CredentialsService.getInstance();
     const dynatraceCredentials : DynatraceCredentials = await credService.getDynatraceCredentials();
 
@@ -110,7 +110,7 @@ export class ServiceNowService {
       response = await axios.get(commentUrl);
       // console.log(response);
     } catch (error) {
-      utils.logMessage(keptnContext, error);
+      utils.logMessage(keptnContext, eventId, error, 'ERROR');
       return false;
     }
     return response;
@@ -123,9 +123,9 @@ export class ServiceNowService {
     return null;
   }
 
-  async updateIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents, keptnContext : string) : Promise<boolean> {
-    utils.logMessage(keptnContext, `updateIncident`);
-    const comments = await this.getCommentsOnProblem(problem.PID, keptnContext);
+  async updateIncident(problem : DynatraceProblem, problemDetails : DynatraceEvents, keptnContext : string, eventId : string) : Promise<boolean> {
+    utils.logMessage(keptnContext, eventId, `updateIncident`);
+    const comments = await this.getCommentsOnProblem(problem.PID, keptnContext, eventId);
     let snowSysid = null;
     for (const comment of comments.data.comments) {
       // console.log(comment.content);
@@ -150,19 +150,19 @@ export class ServiceNowService {
         // utils.logMessage(keptnContext, `incident: ${JSON.stringify(incident)}`);
         const response = await axios.put(`${ServiceNowService.url}/${snowSysid}`, incident, {headers: headers});
         // console.log(response);
-        utils.logMessage(keptnContext, `ServiceNow sys_id of updated incident: ${snowSysid}`);
+        utils.logMessage(keptnContext, eventId, `ServiceNow sys_id of updated incident: ${snowSysid}`);
         const comment = `Incident in ServiceNow resolved. [incident_id:${snowSysid}]`;
-        this.commentOnProblem(problem.PID, comment, keptnContext);
+        this.commentOnProblem(problem.PID, comment, keptnContext, eventId);
         return true;
       } catch (error) {
-        utils.logMessage(keptnContext, error);
+        utils.logMessage(keptnContext, eventId, error);
         return false;
       }
     }
     return false;
   }
 
-  async getDynatraceDetails(problem : DynatraceProblem, keptnContext : string) : Promise<DynatraceEvents> {
+  async getDynatraceDetails(problem : DynatraceProblem, keptnContext : string, eventId : string) : Promise<DynatraceEvents> {
     const credService: CredentialsService = CredentialsService.getInstance();
     const dynatraceCredentials : DynatraceCredentials = await credService.getDynatraceCredentials();
     // console.log(`dt credentials: ${dynatraceCredentials.tenant} / ${dynatraceCredentials.token}`);
@@ -180,10 +180,10 @@ export class ServiceNowService {
         const response = await axios.get(eventsUrl);
         problemDetails = response.data;
       } catch (error) {
-        utils.logMessage(keptnContext, error);
+        utils.logMessage(keptnContext, eventId, error, 'ERROR');
       }
     } else {
-      utils.logMessage(keptnContext, `no problem details provided`);
+      utils.logMessage(keptnContext, eventId, `no problem details provided`);
     }
 
     return problemDetails;

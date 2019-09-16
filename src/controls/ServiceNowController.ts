@@ -64,22 +64,22 @@ export class ServiceNowController implements interfaces.Controller {
       keptnContext = request.body.shkeptncontext;
     }
 
-    utils.logMessage(keptnContext,
+    utils.logMessage(keptnContext, request.body.id,
                      `[ServiceNowController]: event is of type '${request.body.type}'`);
 
     if (request.body !== undefined && request.body.type === 'sh.keptn.events.problem') {
       const dtproblem : DynatraceProblem = request.body.data;
-      utils.logMessage(keptnContext,
+      utils.logMessage(keptnContext, request.body.id,
                        `[ServiceNowController]: passing problem event on to [ServiceNowService]`);
 
       const serviceNowSvc : ServiceNowService = await ServiceNowService.getInstance();
       if (dtproblem.State === 'OPEN') {
-        const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem, keptnContext);
+        const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem, keptnContext, request.body.id);
         let incidentCreated = false;
         if (problemDetails !== undefined) {
           incidentCreated = await serviceNowSvc.createIncident(dtproblem,
                                                                problemDetails,
-                                                               keptnContext);
+                                                               keptnContext, request.body.id);
         }
         if (incidentCreated) {
           result = {
@@ -91,10 +91,11 @@ export class ServiceNowController implements interfaces.Controller {
           };
         }
       } else if (dtproblem.State === 'RESOLVED') {
-        const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem, keptnContext);
+        const problemDetails = await serviceNowSvc.getDynatraceDetails(dtproblem, keptnContext, request.body.id);
         const incidentUpdated = await serviceNowSvc.updateIncident(dtproblem,
                                                                    problemDetails,
-                                                                   keptnContext);
+                                                                   keptnContext,
+                                                                   request.body.id);
         if (incidentUpdated) {
           result = {
             result: 'incident updated',
