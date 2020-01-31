@@ -1,6 +1,6 @@
 # ServiceNow Keptn service
 
-The servicenow-service is a Keptn core component and used for create events and alerts in ServiceNow
+The servicenow-service is a keptn component that can be used for create events and update alerts in ServiceNow
 
 The servicenow-service listens to Keptn events of type:
 
