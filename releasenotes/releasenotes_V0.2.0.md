@@ -8,4 +8,4 @@ The service is designed to receive problem events from keptn and create incident
 
 To trigger these actions, the service listens to CloudEvents from type:
 
-- sh.keptn.event.problem.open: When receiving this event, an event is either created or updated
+- sh.keptn.event.problem.open: When receiving this event, an alert is either created or updated

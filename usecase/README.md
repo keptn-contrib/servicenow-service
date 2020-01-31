@@ -14,7 +14,7 @@ Configuration changes during runtime are sometimes necessary to increase flexibi
 - ServiceNow instance or free ServiceNow developer instance.
 **Note:** Tutorial tested on Madrid and New York releases.
 - Event Management plugin (com.glideapp.itom.snac) needs to be enabled on ServiceNow instance. \
-**Note:** To enable a plugin on a developer ServiceNow instance, visit the [Developer Portal] then go to `MANAGE -> instance` and click on the `Action` button and select `Activate plugin`. From the available plugins list click on `ACTIVATE` next to Event Management and then select `Activate plugin only`. The process will take a few minutes to complete.
+**Note:** To enable a plugin on a developer ServiceNow instance, visit the [Developer Portal] then go to **MANAGE -> instance** and click on the **Action** button and select **Activate plugin**. From the available plugins list click on **ACTIVATE** next to Event Management and then select **Activate plugin only**. The process will take a few minutes to complete.
 - [Dynatrace setup] for monitoring is mandatory
 - Clone the GitHub repository with the necessary files for the tutorial:
 
@@ -25,7 +25,7 @@ cd servicenow-service
 
 ## Create ServiceNow secret
 
-- Create a ServiceNow kubernetes secret to allow the servicenow keptn service to create/update events in ServiceNow and run workflows. 
+- Create a ServiceNow kubernetes secret to allow the servicenow keptn service to create events and update alerts in ServiceNow and trigger workflows.
 
 - Create a file as shown below that contains your ServiceNow credentials and save it in your current directory as cred_file.yaml:
 
@@ -84,7 +84,7 @@ servicenow-service-open-problem-distributor-554b5d778b-vbmgv      1/1     Runnin
 A ServiceNow Update Set is provided to run this tutorial. To install the Update Set follow these steps:
 
 1. Login to your ServiceNow instance.
-2. Type `update set` in the left filter navigator and go to System Update Sets -> Update sets to Commit
+2. Type `update set` in the left filter navigator and go to **System Update Sets -> Update sets to Commit**
 
 ![servicenow updateset overview](./assets/service-now-update-set-overview.png)
 
@@ -104,7 +104,7 @@ A ServiceNow Update Set is provided to run this tutorial. To install the Update 
 
 7. After successfully committing the update set, add the required Dynatrace environment URL and api token necessary for the workflow to execute by completing the following steps:
 
-    - On your ServiceNow instance, navigate to Connections and Credentials -> Credentials.
+    - On your ServiceNow instance, navigate to **Connections and Credentials -> Credentials**.
     - The same api token configured in the [Dynatrace setup] can be used for this tutorial.
     - Click on New and select Basic Auth Credentials. The name should be set to `dynatrace_keptn`, username is your Dynatrace environment URL and password is the dynatrace api token. Make sure that the Dynatrace environment URL follows the pattern `{your-domain}/e/{your-environment-id}` for a managed Dynatrace tenant or `{your-environment-id}.live.dynatrace.com` for a SaaS tenant.
 
@@ -118,7 +118,7 @@ A ServiceNow Update Set is provided to run this tutorial. To install the Update 
     ```
     echo $(kubectl get secret keptn-api-token -n keptn -ojsonpath={.data.keptn-api-token} | base64 --decode)
     ```
-    - On your ServiceNow instance, navigate to Connections and Credentials -> Credentials.
+    - On your ServiceNow instance, navigate to **Connections and Credentials -> Credentials**.
     - Click on New and select Basic Auth Credentials. The name should be set to `keptn`, username is your keptn api URL and password is the keptn api token.
 
 ![servicenow credentials](./assets/service-now-credentials.png)
@@ -130,7 +130,7 @@ During the [Dynatrace setup], a problem notification has already been set up for
 Login to your Dynatrace tenant.
 Navigate to Settings > Integration > Problem notifications
 Click on Set up notifications and select Custom integration
-Click on Keptn remediation
+Click on Keptn Problem Notification
 
 The problem notification should look similar to the one in this screen shot:
 
@@ -230,7 +230,7 @@ After a couple of minutes, Dynatrace will open a problem ticket based on the inc
 
 ## Alert/Incident Generation & workflow execution by ServiceNow
 
-The keptn problem notification configured in Dynatrace is sent out to keptn where the ServiceNow service is subscribed to open problem events. Thus, the ServiceNow service takes the event and creates a new alert in ServiceNow. In your ServiceNow instance, you can take a look at all alerts by navifating to Event Management -> All alerts. You should be able to see the newly created alert, click on it to view some details.
+The keptn problem notification configured in Dynatrace is sent out to keptn where the ServiceNow service is subscribed to open problem events. Thus, the ServiceNow service takes the event and creates a new alert in ServiceNow. In your ServiceNow instance, you can take a look at all alerts by navifating to **Event Management -> All alerts**. You should be able to see the newly created alert, click on it to view some details.
 
 ![servicenow alert](./assets/servicenow-alert.png)
 
@@ -240,7 +240,7 @@ Other useful unformation can be found on the lower portion of the alert such as 
 
 After creation of the alert, an incident is generated and a workflow is triggered in ServiceNow as configured in the `Keptn - Create incident and run remediation workflow` alert management rule that has been setup during the import of the Update Set earlier. The workflow gathers the required credentials configured earlier, reaches out to Dynatrace to gets the remediation URL stored on the custom configuration event on the ItemsController service entity to then execute a web request against the remediation URL and in turn fix the problem detected. If all this runs successfully, the workflow will then make an API call to keptn notifying that there was a configuration change which in turn will redeploy the carts service in all stages and all currently configured tests will be executed against it. Finally, keptn will send event notifications to Dynatrace as part of the configuration change and Dynatrace will also close the problem once it detects that the failure rate on the ItemsController service dropped.
 
-You can view the execution of the workflow by navigating to Workflow -> Live Workflows -> All Contexts on your ServiceNow instance and clicking on the started date next to the workflow version that appears as `keptn_remediation_1.0`
+You can view the execution of the workflow by navigating to **Workflow -> Live Workflows -> All Contexts** on your ServiceNow instance and clicking on the started date next to the workflow version that appears as `keptn_remediation_1.0`
 
 ![servicenow workflow list](./assets/servicenow-workflow-list.png)
 
@@ -252,14 +252,13 @@ You can then go to the [keptn bridge] and check that keptn received the configur
 
 ![servicenow keptn bridge](./assets/servicenow-keptn-bridge.png)
 
-To finalize, check the `ItemsController` service in the `production` stage in Dynatrace after keptn has finished running the deployment and view the newly created events, you will also notive that the open problem on dynatrace should automatically close after Dynatrace sees that the ItemsController service is behaving as expected.
+To finalize, check the `ItemsController` service in the `production` stage in Dynatrace after keptn has finished running the deployment and view the newly created events, the open problem in dynatrace should automatically close a few minutes after the remediation workflow successfully completes.
 
 ![servicenow dynatrace events](./assets/servicenow-dynatrace-events.png)
 
-
 ## Troubleshooting
 
-- Please note that Dynatrace has its feature called Frequent Issue Detection enabled by default. This means, that if Dynatrace detects the same problem multiple times, it will be classified as a frequent issue and problem notifications won’t be sent out to third party tools. Therefore, the tutorial might not be able to be run a couple of times in a row. To disable this feature:
+- Please note that Dynatrace has a feature called Frequent Issue Detection enabled by default. This means, that if Dynatrace detects the same problem multiple times, it will be classified as a frequent issue and problem notifications won’t be sent out to third party tools. Therefore, the tutorial might not be able to be run a couple of times in a row. To disable this feature:
 
 1. Login to your Dynatrace tenant.
 1. Navigate to Settings > Anomaly detection > Frequent issue detection
@@ -280,7 +279,7 @@ kubectl logs -l 'run=servicenow-service' -n keptn
 {"result":{"Default Bulk Endpoint":"1 events were inserted"}}
 ```
 
-In ServiceNow you can take a look at the orkflow -> Live Workflows -> All Contexts and select the workflow context of the keptn_remediation_1.0 workflow, you can then look at the workflow log tab to further troubleshoot.
+In ServiceNow you can take a look at the workflow activity by navidating to **Workflow -> Live Workflows -> All Contexts** and select the workflow context of the keptn_remediation_1.0 workflow, you can then look at the workflow log tab to further troubleshoot.
 
 In case Dynatrace detected a problem before the ServiceNow secret was created in your Kubernetes cluster, the remediation will not work. Resolution:
 
