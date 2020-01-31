@@ -12,7 +12,7 @@ Whenever a problem is detected by keptn, the servicenow-service will receive a s
 
 ### Create ServiceNow secret
 
-- Create a ServiceNow kubernetes secret to allow the servicenow keptn service to create events and update alerts in ServiceNow.
+- Create a ServiceNow kubernetes secret to allow the ServiceNow keptn service to create events and update alerts in ServiceNow.
 
 - Create a file as shown below that contains your ServiceNow credentials and save it in your current directory as cred_file.yaml:
 
