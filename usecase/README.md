@@ -1,6 +1,6 @@
 # Runbook Automation
 
-Gives an overview of how to leverage the power of runbook automation to build self-healing applications. This tutorial uses ServiceNow workflows that trigger when alerts from Keptn are generated.
+Gives an overview of how to leverage the power of runbook automation to build self-healing applications. This tutorial uses ServiceNow workflows that trigger when open problem events from keptn are generated.
 
 ## About this tutorial
 
@@ -8,12 +8,12 @@ Configuration changes during runtime are sometimes necessary to increase flexibi
 
 ## Prerequisites
 
-- Finish the Onboarding a Service tutorial.
+- Finish the Onboarding a Service tutorial. \
 **Note:** For this tutorial, the Onboarding a Service tutorial has to be completed exactly as it is described. The scripts provided in the current tutorial rely on values that are set during the onboarding of the carts service. Thus, this tutorial might not work as expected if values are changed.
 - If any of the [Self-healing] tutorials were completed, all the remediation files added as resources to the sockshop project in the production stage, will need to be deleted either locally or from the Git upstream.
 - ServiceNow instance or free ServiceNow developer instance.
 **Note:** Tutorial tested on Madrid and New York releases.
-- Event Management plugin (com.glideapp.itom.snac) needs to be enabled on ServiceNow instance.
+- Event Management plugin (com.glideapp.itom.snac) needs to be enabled on ServiceNow instance. \
 **Note:** To enable a plugin on a developer ServiceNow instance, visit the [Developer Portal] then go to `MANAGE -> instance` and click on the `Action` button and select `Activate plugin`. From the available plugins list click on `ACTIVATE` next to Event Management and then select `Activate plugin only`. The process will take a few minutes to complete.
 - [Dynatrace setup] for monitoring is mandatory
 - Clone the GitHub repository with the necessary files for the tutorial:
@@ -25,7 +25,7 @@ cd servicenow-service
 
 ## Create ServiceNow secret
 
-- Create a ServiceNow kubernetes secret to allow the servicenow Keptn service to create/update events in ServiceNow and run workflows. 
+- Create a ServiceNow kubernetes secret to allow the servicenow keptn service to create/update events in ServiceNow and run workflows. 
 
 - Create a file as shown below that contains your ServiceNow credentials and save it in your current directory as cred_file.yaml:
 
@@ -45,7 +45,7 @@ kubectl create secret generic servicenow -n keptn --from-file=servicenow-credent
 
 ## Install the ServiceNow service on the keptn namespace
 
-- Subscribe the servicenow-service to Keptn sh.keptn.event.problem.open events by applying the distributor manifest:
+- Subscribe the servicenow-service to keptn sh.keptn.event.problem.open events by applying the distributor manifest:
 
 ```
 cd deploy
@@ -90,7 +90,7 @@ A ServiceNow Update Set is provided to run this tutorial. To install the Update 
 
 3. Click on Import Update Set from XML
 
-4. Import and Upload the file from your file system that you find in your servicenow-service/usecase folder: keptn_remediation_1.0.xml
+4. Import and Upload the file from your file system that you find in your servicenow-service/usecase folder: [keptn_remediation_1.0.xml] 
 
 5. Open the Update Set
 
@@ -100,7 +100,7 @@ A ServiceNow Update Set is provided to run this tutorial. To install the Update 
 
 ![servicenow updateset commit](./assets/service-now-update-set-commit.png)
 
-**Note:** The update set will add an alert management rule named `Keptn - Create incident and run remediation workflow` and a workflow: `keptn_remediation_1.0` to your instance on the global application scope.
+**Note:** The update set will add an alert management rule named `keptn - Create incident and run remediation workflow` and a workflow: `keptn_remediation_1.0` to your instance on the global application scope.
 
 7. After successfully committing the update set, add the required Dynatrace environment URL and api token necessary for the workflow to execute by completing the following steps:
 
@@ -131,6 +131,7 @@ Login to your Dynatrace tenant.
 Navigate to Settings > Integration > Problem notifications
 Click on Set up notifications and select Custom integration
 Click on Keptn remediation
+
 The problem notification should look similar to the one in this screen shot:
 
 ![ketpn problem notification](./assets/keptn_problem_notification.png)
@@ -163,7 +164,7 @@ cd ../usecase
 
 ## Run the tutorial
 
-Now all the pieces are in place to run the use case of a problem found in production. Therefore, we will start by generating some load on the carts service in our production environment. Afterwards, we will change the configuration of this service at runtime. This will cause an increase in failures in the carts service running in our production environment, dynatrace will detect the issue and using the custom problem notification we set up in Dynatrace, Keptn will be informed about the problem and will forward it to the servicenow-service that in turn creates an alert in ServiceNow. This alert will trigger a workflow from the configured alert management rule that is able to remediate the issue at runtime. If the remediation workflow completes successfully, ServiceNow will send a configuration change event to keptn which in respoinse will redeploy the carts service and all currently configured tests will be executed against it. An incident will also be created that will be linked to the alert.
+Now all the pieces are in place to run the use case of a problem found in production. Therefore, we will start by generating some load on the carts service in our production environment. Afterwards, we will change the configuration of this service at runtime. This will cause an increase in failures in the carts service running in our production environment, dynatrace will detect the issue and using the custom problem notification we set up in Dynatrace, keptn will be informed about the problem and will forward it to the servicenow-service that in turn creates an alert in ServiceNow. This alert will trigger a workflow from the configured alert management rule that is able to remediate the issue at runtime. If the remediation workflow completes successfully, ServiceNow will send a configuration change event to keptn which in respoinse will redeploy the carts service and all currently configured tests will be executed against it. An incident will also be created that will be linked to the alert.
 
 ## Load generation
 
@@ -187,7 +188,7 @@ Adding item to cart...
 ## Configuration change at runtime
 
 1. Open another terminal to make sure the load generation is still running and again, navigate to the servicenow-service/usecase folder.
-1. The `DT_API_TOKEN` and the `DT_TENANT` need to be stored in an environment variable. Therefore, copy and paste the following command to make sure that DT_TENANT stores a url that follows the pattern `{your-domain}/e/{your-environment-id}` for a managed Dynatrace tenant or `{your-environment-id}.live.dynatrace.com` for a SaaS tenant.
+1. The `DT_API_TOKEN` and the `DT_TENANT` need to be stored in an environment variable. Therefore, copy and paste the following commands to make sure that DT_TENANT stores a url that follows the pattern `{your-domain}/e/{your-environment-id}` for a managed Dynatrace tenant or `{your-environment-id}.live.dynatrace.com` for a SaaS tenant.
 
 ```
 export DT_TENANT=$(kubectl get secret dynatrace -n keptn -o=jsonpath='{.data.DT_TENANT}' | base64 --decode)
@@ -229,7 +230,7 @@ After a couple of minutes, Dynatrace will open a problem ticket based on the inc
 
 ## Alert/Incident Generation & workflow execution by ServiceNow
 
-The keptn problem notification configured in Dynatrace is sent out to Keptn where the ServiceNow service is subscribed to open problem events. Thus, the ServiceNow service takes the event and creates a new alert in ServiceNow. In your ServiceNow instance, you can take a look at all alerts by navifating to Event Management -> All alerts. You should be able to see the newly created alert, click on it to view some details.
+The keptn problem notification configured in Dynatrace is sent out to keptn where the ServiceNow service is subscribed to open problem events. Thus, the ServiceNow service takes the event and creates a new alert in ServiceNow. In your ServiceNow instance, you can take a look at all alerts by navifating to Event Management -> All alerts. You should be able to see the newly created alert, click on it to view some details.
 
 ![servicenow alert](./assets/servicenow-alert.png)
 
@@ -247,15 +248,14 @@ Once the workflow context record is open, click on `Show Workflow` under `Relate
 
 ![servicenow workflow view](./assets/servicenow-workflow-view.png)
 
-You can then check the keptn bridge and check that keptn received the configuration change event:
+You can then go to the [keptn bridge] and check that keptn received the configuration change event:
 
 ![servicenow keptn bridge](./assets/servicenow-keptn-bridge.png)
 
-To finalize, check the `ItemsController` service in the `production` stage in Dynatrace after keptn has finished running the deployment and view the newly created events:
+To finalize, check the `ItemsController` service in the `production` stage in Dynatrace after keptn has finished running the deployment and view the newly created events, you will also notive that the open problem on dynatrace should automatically close after Dynatrace sees that the ItemsController service is behaving as expected.
 
 ![servicenow dynatrace events](./assets/servicenow-dynatrace-events.png)
 
-In ServiceNow you can take a look at the System Log > All to verify which actions have been executed. You should be able to see some logs on the execution of the Keptn demo workflow as shown in the screenshot:
 
 ## Troubleshooting
 
@@ -291,6 +291,8 @@ In case Dynatrace detected a problem before the ServiceNow secret was created in
 kubectl delete pod -l 'run=servicenow-service' -n keptn
 ```
 
+[keptn bridge]: https://keptn.sh/docs/0.6.0/usecases/onboard-carts-service/#send-new-artifacts-and-watch-keptn-doing-the-deployment
 [Dynatrace setup]: https://keptn.sh/docs/0.6.0/reference/monitoring/dynatrace/#setup-dynatrace
 [Developer Portal]: https://developer.servicenow.com/
 [Self-healing]: https://keptn.sh/docs/0.6.0/usecases/self-healing-with-keptn/
+[keptn_remediation_1.0.xml]: ./keptn_remediation_1.0.xml
