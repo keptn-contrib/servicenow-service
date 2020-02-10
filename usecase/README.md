@@ -11,7 +11,7 @@ Configuration changes during runtime are sometimes necessary to increase flexibi
 - Finish the [Onboarding a Service] tutorial. \
 **Note:** For this tutorial, the Onboarding a Service tutorial has to be completed exactly as it is described. The scripts provided in the current tutorial rely on values that are set during the onboarding of the carts service. Thus, this tutorial might not work as expected if values are changed.
 - If any of the [Self-healing] tutorials were completed, all the remediation files added as resources to the sockshop project in the production stage, will need to be deleted either locally or from the Git upstream.
-- ServiceNow instance or free ServiceNow [developer instance].
+- ServiceNow instance or free ServiceNow [developer instance]. \
 **Note:** Tutorial tested on Madrid and New York releases.
 - Event Management plugin (com.glideapp.itom.snac) needs to be enabled on ServiceNow instance. \
 **Note:** To enable a plugin on a developer ServiceNow instance, visit the [Developer Portal] then go to **MANAGE -> instance** and click on the **Action** button and select **Activate plugin**. From the available plugins list click on **ACTIVATE** next to Event Management and then select **Activate plugin only**. The process will take a few minutes to complete.
