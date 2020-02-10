@@ -10,7 +10,7 @@ Configuration changes during runtime are sometimes necessary to increase flexibi
 
 - Finish the [Onboarding a Service] tutorial. \
 **Note:** For this tutorial, the Onboarding a Service tutorial has to be completed exactly as it is described. The scripts provided in the current tutorial rely on values that are set during the onboarding of the carts service. Thus, this tutorial might not work as expected if values are changed.
-- If any of the [Self-healing] tutorials were completed, all the remediation files added as resources to the sockshop project in the production stage, will need to be deleted either locally or from the Git upstream. \
+- If any of the [Self-healing] tutorials were completed, all the remediation files added as resources to the sockshop project in the production stage, will need to be deleted either locally or from the Git upstream.
 - ServiceNow instance or free ServiceNow [developer instance].
 **Note:** Tutorial tested on Madrid and New York releases.
 - Event Management plugin (com.glideapp.itom.snac) needs to be enabled on ServiceNow instance. \
@@ -252,9 +252,15 @@ You can then go to the [keptn bridge] and check that keptn received the configur
 
 ![servicenow keptn bridge](./assets/servicenow-keptn-bridge.png)
 
-Check the `ItemsController` service in the `production` stage in Dynatrace. After keptn has finished running the deployment of the carts service you should see the newly created events. Finally, the open problem in Dynatrace should automatically close a few minutes after the remediation workflow successfully completes.
+Check the `ItemsController` service in the `production` stage in Dynatrace. After keptn has finished running the deployment of the carts service you should see the newly created events. The open problem in Dynatrace should automatically close a few minutes after the remediation workflow successfully completes and a comment will also show on the problem comments incicating that the workflow executed successfully:
+
+**ItemsController Service events**
 
 ![servicenow dynatrace events](./assets/servicenow-dynatrace-events.png)
+
+**Dynatrace Problem comments**
+
+![dynatrace problem comment](./assets/dt_problem_comment.png)
 
 ## Troubleshooting
 

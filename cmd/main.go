@@ -30,16 +30,17 @@ type Event struct {
 
 // Records is the fields contained within the event ...
 type Records struct {
-	Source         string `json:"source"`
-	EventClass     string `json:"event_class"`
-	Resource       string `json:"resource"`
-	Node           string `json:"node"`
-	MetricName     string `json:"metric_name"`
-	Type           string `json:"type"`
-	MessageKey     string `json:"message_key"`
-	Severity       string `json:"severity"`
-	Description    string `json:"description"`
-	AdditionalInfo string `json:"additional_info"`
+	Source          string `json:"source"`
+	EventClass      string `json:"event_class"`
+	Resource        string `json:"resource"`
+	Node            string `json:"node"`
+	MetricName      string `json:"metric_name"`
+	Type            string `json:"type"`
+	MessageKey      string `json:"message_key"`
+	Severity        string `json:"severity"`
+	Description     string `json:"description"`
+	ResolutionState string `json:"resolution_state"`
+	AdditionalInfo  string `json:"additional_info"`
 }
 
 type problemDetailsData struct {
@@ -117,8 +118,10 @@ func createEvent(event cloudevents.Event, shkeptncontext string, data keptnevent
 		panic(err)
 	}
 
-	//Map eventtype to ServiceNow severity
+	// Map eventtype to ServiceNow event severity
 	var severity string = ""
+	// Map problem status to ServiceNow event resolution state
+	var resolutionState = ""
 
 	switch problemInfo.SeverityLevel {
 	case "AVAILABILITY":
@@ -135,18 +138,25 @@ func createEvent(event cloudevents.Event, shkeptncontext string, data keptnevent
 		severity = "4"
 	}
 
+	if problemInfo.Status == "RESOLVED" {
+		resolutionState = "Closing"
+	} else {
+		resolutionState = "New"
+	}
+
 	SnowEvent := Event{
 		Records: []Records{
 			Records{
-				Source:         EventSource,
-				EventClass:     event.Source(),
-				Node:           KeptnNode,
-				MetricName:     data.ProblemTitle,
-				Type:           data.ProblemTitle,
-				MessageKey:     data.PID,
-				Severity:       severity,
-				Description:    data.ProblemTitle,
-				AdditionalInfo: "{'KeptnSource':'" + event.Source() + "', 'KeptnContext':'" + shkeptncontext + "', 'KeptnImpactedEntity':'" + KeptnNode + "', 'KeptnPID':'" + data.PID + "', 'KeptnProblemTitle':'" + data.ProblemTitle + "', 'KeptnProblemState':'" + data.State + "', 'KeptnProject':'" + data.Project + "', 'KeptnStage':'" + data.Stage + "', 'KeptnService':'" + data.Service + "', 'KeptnProblemID':'" + data.ProblemID + "', 'KeptnImpactLevel':'" + problemInfo.ImpactLevel + "', 'KeptnSeverityLevel':'" + problemInfo.SeverityLevel + "'}",
+				Source:          EventSource,
+				EventClass:      event.Source(),
+				Node:            KeptnNode,
+				MetricName:      data.ProblemTitle,
+				Type:            data.ProblemTitle,
+				MessageKey:      data.PID,
+				Severity:        severity,
+				Description:     data.ProblemTitle,
+				ResolutionState: resolutionState,
+				AdditionalInfo:  "{'KeptnSource':'" + event.Source() + "', 'KeptnContext':'" + shkeptncontext + "', 'KeptnImpactedEntity':'" + KeptnNode + "', 'KeptnPID':'" + data.PID + "', 'KeptnProblemTitle':'" + data.ProblemTitle + "', 'KeptnProblemState':'" + data.State + "', 'KeptnProject':'" + data.Project + "', 'KeptnStage':'" + data.Stage + "', 'KeptnService':'" + data.Service + "', 'KeptnProblemID':'" + data.ProblemID + "', 'KeptnImpactLevel':'" + problemInfo.ImpactLevel + "', 'KeptnSeverityLevel':'" + problemInfo.SeverityLevel + "'}",
 			},
 		},
 	}
