@@ -252,7 +252,7 @@ You can then go to the [keptn bridge] and check that keptn received the configur
 
 ![servicenow keptn bridge](./assets/servicenow-keptn-bridge.png)
 
-Check the `ItemsController` service in the `production` stage in Dynatrace. After keptn has finished running the deployment of the carts service you should see the newly created events. The open problem in Dynatrace should automatically close a few minutes after the remediation workflow successfully completes and a comment will also show on the problem comments incicating that the workflow executed successfully:
+Check the `ItemsController` service in the `production` stage in Dynatrace. After keptn has finished running the deployment of the carts service you should see the newly created events. The open problem in Dynatrace should automatically close a few minutes after the remediation workflow successfully completes and a comment will also show on the problem comments indicating that the workflow executed successfully:
 
 **ItemsController Service events**
 
