@@ -164,7 +164,7 @@ func createEvent(event cloudevents.Event, shkeptncontext string, data keptnevent
 	var EventData []byte
 	EventData, err = json.Marshal(SnowEvent)
 	if err != nil {
-		log.Println(err)
+		logger.Debug(err.Error())
 	}
 
 	var jsonString = string(EventData)
@@ -177,12 +177,12 @@ func createEvent(event cloudevents.Event, shkeptncontext string, data keptnevent
 	req.SetBasicAuth(snowUser, snowPassword)
 
 	if err != nil {
-		fmt.Println(err)
+		logger.Debug(err.Error())
 	}
 
 	res, err := client.Do(req)
 	if err != nil {
-		fmt.Println(err)
+		logger.Debug(err.Error())
 	}
 
 	defer res.Body.Close()
