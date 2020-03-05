@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2020-03-05 14:44:30">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>keptn_demo_1.0</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>8d1cbb17dba24810831bb080399619ad</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-03-05 14:44:29</sys_created_on>
+<sys_id>900210badb130010831bb0803996195f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-03-05 14:44:29</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>wf_workflow_2c97f2aedb920010831bb08039961924</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="wf_workflow_version"&gt;&lt;wf_workflow_version action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;activity_stages&gt;{"ends":["c443d43fdbfe4410831bb080399619de"],"subflows":[],"activities":{},"stages":{}}&lt;/activity_stages&gt;&lt;after_business_rules&gt;false&lt;/after_business_rules&gt;&lt;checked_out/&gt;&lt;checked_out_by/&gt;&lt;column_renderer display_value="Workflow-driven"&gt;a56213111b030100adca1e094f0713ac&lt;/column_renderer&gt;&lt;condition/&gt;&lt;condition_type&gt;run_match&lt;/condition_type&gt;&lt;description&gt;Keptn Remediation Workflow&lt;/description&gt;&lt;expected_sequences&gt;7333d43fdbfe4410831bb080399619da,4043d43fdbfe4410831bb080399619dc,8843d43fdbfe4410831bb080399619e2,4443d43fdbfe4410831bb080399619e1,0443d43fdbfe4410831bb080399619e4,cc43d43fdbfe4410831bb080399619dc,c443d43fdbfe4410831bb080399619e3,c043d43fdbfe4410831bb080399619df,0843d43fdbfe4410831bb080399619e0,aa85183fdbfe4410831bb08039961953,37335477dbbe4410831bb08039961926,0043d43fdbfe4410831bb080399619db,c443d43fdbfe4410831bb080399619de&lt;/expected_sequences&gt;&lt;expected_time&gt;1970-01-01 14:00:00&lt;/expected_time&gt;&lt;expected_time_type/&gt;&lt;full_sequences&gt;7333d43fdbfe4410831bb080399619da,4043d43fdbfe4410831bb080399619dc,8843d43fdbfe4410831bb080399619e2,4443d43fdbfe4410831bb080399619e1,0443d43fdbfe4410831bb080399619e4,c443d43fdbfe4410831bb080399619de,cc43d43fdbfe4410831bb080399619dc,c443d43fdbfe4410831bb080399619e3,c043d43fdbfe4410831bb080399619df,0843d43fdbfe4410831bb080399619e0,aa85183fdbfe4410831bb08039961953,37335477dbbe4410831bb08039961926,0043d43fdbfe4410831bb080399619db&lt;/full_sequences&gt;&lt;journal/&gt;&lt;max_activity_count&gt;100&lt;/max_activity_count&gt;&lt;name&gt;keptn_remediation_1.0&lt;/name&gt;&lt;not_cacheable&gt;false&lt;/not_cacheable&gt;&lt;on_cancel&gt;&lt;![CDATA[// This script executes if the workflow is cancelled.// The global variable context_sys_id contains the sys_id of the cancelled workflow context.]]&gt;&lt;/on_cancel&gt;&lt;order&gt;100&lt;/order&gt;&lt;pin_type&gt;set_by_activity&lt;/pin_type&gt;&lt;published&gt;true&lt;/published&gt;&lt;relative_duration display_value="2 business days by 4pm"&gt;3bf802c20a0a0b52008e2859cd8abcf2&lt;/relative_duration&gt;&lt;requires_ert&gt;true&lt;/requires_ert&gt;&lt;run_multiple&gt;false&lt;/run_multiple&gt;&lt;schedule/&gt;&lt;stage_field/&gt;&lt;stage_order&gt;computed&lt;/stage_order&gt;&lt;start display_value="Begin"&gt;7333d43fdbfe4410831bb080399619da&lt;/start&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;f7335477dbbe4410831bb08039961924&lt;/sys_id&gt;&lt;sys_mod_count&gt;43&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:38:33&lt;/sys_updated_on&gt;&lt;table&gt;em_remediation_task&lt;/table&gt;&lt;timezone/&gt;&lt;validated&gt;false&lt;/validated&gt;&lt;workflow display_value="keptn_remediation_1.0"&gt;2c97f2aedb920010831bb08039961924&lt;/workflow&gt;&lt;/wf_workflow_version&gt;&lt;wf_workflow action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;description&gt;Keptn Remediation Workflow&lt;/description&gt;&lt;name&gt;keptn_remediation_1.0&lt;/name&gt;&lt;preview/&gt;&lt;sys_class_name&gt;wf_workflow&lt;/sys_class_name&gt;&lt;sys_created_by&gt;evt_dynatrace&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-01-15 15:06:34&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;2c97f2aedb920010831bb08039961924&lt;/sys_id&gt;&lt;sys_mod_count&gt;14&lt;/sys_mod_count&gt;&lt;sys_name&gt;keptn_remediation_1.0&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;wf_workflow_2c97f2aedb920010831bb08039961924&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-09 22:22:17&lt;/sys_updated_on&gt;&lt;table&gt;em_remediation_task&lt;/table&gt;&lt;template&gt;false&lt;/template&gt;&lt;vars/&gt;&lt;/wf_workflow&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Run Script"&gt;db8c65aec0a8016501d00259bc7203a4&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;13&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Add comments to dynatrace problem&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0843d43fdbfe4410831bb080399619e0&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;1161&lt;/x&gt;&lt;y&gt;122&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=0843d43fdbfe4410831bb080399619e0"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;0843d43fdbfe4410831bb080399619e0&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8843d43fdbfe4410831bb080399619e0&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var dt_tenant = workflow.scratchpad.dynatrace_url;&amp;#13;
+var dt_api_key = workflow.scratchpad.dynatrace_api_key;&amp;#13;
+var dt_auth_header = "Api-Token " + dt_api_key;&amp;#13;
+var additional_info = current.alert.additional_info;&amp;#13;
+var dt_data = JSON.parse(additional_info);&amp;#13;
+var problem_id = dt_data.KeptnPID;&amp;#13;
+&amp;#13;
+//workflow.info("dt PID: " + problem_id);&amp;#13;
+&amp;#13;
+var body = {&amp;#13;
+  "comment": "Remediation workflow executed successfully",&amp;#13;
+  "user": "ServiceNow Orchestration",&amp;#13;
+  "context": "ServiceNow"&amp;#13;
+};&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setHttpMethod("post");&amp;#13;
+    restMessage.setHttpTimeout(10000);&amp;#13;
+	restMessage.setEndpoint(dt_tenant + "/api/v1/problem/details/" + problem_id + "/comments");&amp;#13;
+	restMessage.setRequestHeader("Authorization", dt_auth_header);&amp;#13;
+    restMessage.setRequestHeader("Content-Type", "application/json");&amp;#13;
+    restMessage.setRequestBody(JSON.stringify(body));&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    var message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info("problem update response: " + httpResponseBody);&amp;#13;
+//workflow.info("dt status code: " + httpResponseStatus);&amp;#13;
+//var obj = JSON.parse(httpResponseBody);&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;0843d43fdbfe4410831bb080399619e0&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8843d43fdbfe4410831bb080399619e0&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var dt_tenant = workflow.scratchpad.dynatrace_url;&amp;#13;
+var dt_api_key = workflow.scratchpad.dynatrace_api_key;&amp;#13;
+var dt_auth_header = "Api-Token " + dt_api_key;&amp;#13;
+var additional_info = current.alert.additional_info;&amp;#13;
+var dt_data = JSON.parse(additional_info);&amp;#13;
+var problem_id = dt_data.KeptnPID;&amp;#13;
+&amp;#13;
+//workflow.info("dt PID: " + problem_id);&amp;#13;
+&amp;#13;
+var body = {&amp;#13;
+  "comment": "Remediation workflow executed successfully",&amp;#13;
+  "user": "ServiceNow Orchestration",&amp;#13;
+  "context": "ServiceNow"&amp;#13;
+};&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setHttpMethod("post");&amp;#13;
+    restMessage.setHttpTimeout(10000);&amp;#13;
+	restMessage.setEndpoint(dt_tenant + "/api/v1/problem/details/" + problem_id + "/comments");&amp;#13;
+	restMessage.setRequestHeader("Authorization", dt_auth_header);&amp;#13;
+    restMessage.setRequestHeader("Content-Type", "application/json");&amp;#13;
+    restMessage.setRequestBody(JSON.stringify(body));&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    var message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info("problem update response: " + httpResponseBody);&amp;#13;
+//workflow.info("dt status code: " + httpResponseStatus);&amp;#13;
+//var obj = JSON.parse(httpResponseBody);&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Add comments to dynatrace problem"&gt;0843d43fdbfe4410831bb080399619e0&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8c43d43fdbfe4410831bb080399619e0&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="If"&gt;98f621ca0a0a0b5900f7c291f5e45a0e&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;10&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Are credentials available?&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4443d43fdbfe4410831bb080399619e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;392&lt;/x&gt;&lt;y&gt;68&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=4443d43fdbfe4410831bb080399619e1"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;4443d43fdbfe4410831bb080399619e1&lt;/document_key&gt;&lt;order&gt;300&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4c43d43fdbfe4410831bb080399619e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var dt_tenant = workflow.scratchpad.dynatrace_url;&amp;#13;
+var dt_api_key = workflow.scratchpad.dynatrace_api_key;&amp;#13;
+var keptn_url = workflow.scratchpad.keptn_url;&amp;#13;
+var keptn_api_key = workflow.scratchpad.keptn_api_key;&amp;#13;
+&amp;#13;
+answer = checkCreds();&amp;#13;
+&amp;#13;
+function checkCreds() {&amp;#13;
+    if (dt_tenant != "" &amp;amp;&amp;amp; dt_api_key != "" &amp;amp;&amp;amp; keptn_url != "" &amp;amp;&amp;amp; keptn_api_key != "")  {&amp;#13;
+        return 'yes';&amp;#13;
+    }&amp;#13;
+    return 'no';&amp;#13;
+}&lt;/value&gt;&lt;variable display_value=""&gt;c35e50810a0a0ba96248a709b450fc32&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;4443d43fdbfe4410831bb080399619e1&lt;/document_key&gt;&lt;order&gt;200&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8843d43fdbfe4410831bb080399619e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;1&lt;/value&gt;&lt;variable display_value=""&gt;493d2c1d0a6a803f3217a75738ea3289&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;4443d43fdbfe4410831bb080399619e1&lt;/document_key&gt;&lt;order&gt;100&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c443d43fdbfe4410831bb080399619e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value/&gt;&lt;variable display_value=""&gt;493cba6a0a6a803f07df24b118473551&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;4443d43fdbfe4410831bb080399619e1&lt;/document_key&gt;&lt;order&gt;100&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c443d43fdbfe4410831bb080399619e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value/&gt;&lt;variable display_value=""&gt;493cba6a0a6a803f07df24b118473551&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;4443d43fdbfe4410831bb080399619e1&lt;/document_key&gt;&lt;order&gt;200&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8843d43fdbfe4410831bb080399619e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;1&lt;/value&gt;&lt;variable display_value=""&gt;493d2c1d0a6a803f3217a75738ea3289&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;4443d43fdbfe4410831bb080399619e1&lt;/document_key&gt;&lt;order&gt;300&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4c43d43fdbfe4410831bb080399619e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var dt_tenant = workflow.scratchpad.dynatrace_url;&amp;#13;
+var dt_api_key = workflow.scratchpad.dynatrace_api_key;&amp;#13;
+var keptn_url = workflow.scratchpad.keptn_url;&amp;#13;
+var keptn_api_key = workflow.scratchpad.keptn_api_key;&amp;#13;
+&amp;#13;
+answer = checkCreds();&amp;#13;
+&amp;#13;
+function checkCreds() {&amp;#13;
+    if (dt_tenant != "" &amp;amp;&amp;amp; dt_api_key != "" &amp;amp;&amp;amp; keptn_url != "" &amp;amp;&amp;amp; keptn_api_key != "")  {&amp;#13;
+        return 'yes';&amp;#13;
+    }&amp;#13;
+    return 'no';&amp;#13;
+}&lt;/value&gt;&lt;variable display_value=""&gt;c35e50810a0a0ba96248a709b450fc32&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Are credentials available?"&gt;4443d43fdbfe4410831bb080399619e1&lt;/activity&gt;&lt;condition&gt;activity.result == 'no'&lt;/condition&gt;&lt;condition_default display_value="No"&gt;c1eff6430a0a0b59000f955abe842c94&lt;/condition_default&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;false&lt;/is_positive&gt;&lt;name&gt;No&lt;/name&gt;&lt;order&gt;200&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;true&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c043d43fdbfe4410831bb080399619e2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Are credentials available?"&gt;4443d43fdbfe4410831bb080399619e1&lt;/activity&gt;&lt;condition&gt;activity.result == 'yes'&lt;/condition&gt;&lt;condition_default display_value="Yes"&gt;c1ef63200a0a0b59005ef89bae78feb7&lt;/condition_default&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Yes&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4043d43fdbfe4410831bb080399619e2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Begin"&gt;c7a5e32c0a0a0b3a002377c24ed8ea76&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;1&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input/&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Begin&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;7333d43fdbfe4410831bb080399619da&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width&gt;80&lt;/width&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;20&lt;/x&gt;&lt;y&gt;20&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=7333d43fdbfe4410831bb080399619da"/&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Begin"&gt;7333d43fdbfe4410831bb080399619da&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0843d43fdbfe4410831bb080399619da&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="End"&gt;c7a66f7d0a0a0b3a004544a6d2f14076&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;2&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input/&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;End&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c443d43fdbfe4410831bb080399619de&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width&gt;80&lt;/width&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;679&lt;/x&gt;&lt;y&gt;510&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=c443d43fdbfe4410831bb080399619de"/&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Log Message"&gt;396807940a0a0b5c00afd9f67d9fd7a2&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;4&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;end workflow&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0043d43fdbfe4410831bb080399619db&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:38:09&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;1193&lt;/x&gt;&lt;y&gt;383&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=0043d43fdbfe4410831bb080399619db"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;0043d43fdbfe4410831bb080399619db&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0443d43fdbfe4410831bb080399619db&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;keptn hackathon demo remediation workflow finished&lt;/value&gt;&lt;variable display_value=""&gt;c35dbd1a0a0a0ba96248a7092864142d&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;0043d43fdbfe4410831bb080399619db&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0443d43fdbfe4410831bb080399619db&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;keptn hackathon demo remediation workflow finished&lt;/value&gt;&lt;variable display_value=""&gt;c35dbd1a0a0a0ba96248a7092864142d&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="end workflow"&gt;0043d43fdbfe4410831bb080399619db&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8843d43fdbfe4410831bb080399619db&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Run Script"&gt;db8c65aec0a8016501d00259bc7203a4&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;9&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Get remediation URL&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0443d43fdbfe4410831bb080399619e4&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;573&lt;/x&gt;&lt;y&gt;65&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=0443d43fdbfe4410831bb080399619e4"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;0443d43fdbfe4410831bb080399619e4&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8443d43fdbfe4410831bb080399619e4&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var dt_tenant = workflow.scratchpad.dynatrace_url;&amp;#13;
+var dt_api_key = workflow.scratchpad.dynatrace_api_key;&amp;#13;
+&amp;#13;
+//workflow.info("dynatrace url is: " + dt_tenant);&amp;#13;
+&amp;#13;
+var additional_info = current.alert.additional_info;&amp;#13;
+var keptn_data = JSON.parse(additional_info);&amp;#13;
+&amp;#13;
+//workflow.info("keptn service: " + keptn_data.KeptnService);&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setHttpMethod("get");&amp;#13;
+    restMessage.setHttpTimeout(10000);&amp;#13;
+    restMessage.setEndpoint(dt_tenant + "/api/v1/events?eventType=CUSTOM_CONFIGURATION&amp;amp;tag=keptn_service:" + keptn_data.KeptnService + "&amp;amp;tag=keptn_stage:" + keptn_data.KeptnStage + "&amp;amp;tag=keptn_project:" + keptn_data.KeptnProject + "&amp;amp;api-token=" + dt_api_key);&amp;#13;
+    restMessage.setRequestHeader("Content-Type", "application/json");&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    var message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info("config event response: " + httpResponseBody);&amp;#13;
+//workflow.info("dt status code: " + httpResponseStatus);&amp;#13;
+&amp;#13;
+var obj = JSON.parse(httpResponseBody);&amp;#13;
+var events = obj.events;&amp;#13;
+&amp;#13;
+//workflow.info("remediation provider: " + events[0].customProperties.RemediationProvider);&amp;#13;
+&amp;#13;
+for (var i = 0; i &amp;lt; events.length; i++) {&amp;#13;
+    var event = events[i];&amp;#13;
+    var remediation_provider = event.customProperties.RemediationProvider;&amp;#13;
+    var remediation_action = event.customProperties.RemediationAction.toLowerCase();&amp;#13;
+    var remediation_url = event.customProperties.RemediationUrl;&amp;#13;
+&amp;#13;
+    if (remediation_provider.includes("service-now") &amp;amp;&amp;amp; remediation_action.includes("disable promotion")) {&amp;#13;
+        workflow.scratchpad.remediation_url = remediation_url;&amp;#13;
+		break;&amp;#13;
+    }&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info ('remedation url: ' + workflow.scratchpad.remediation_url);&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;0443d43fdbfe4410831bb080399619e4&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8443d43fdbfe4410831bb080399619e4&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var dt_tenant = workflow.scratchpad.dynatrace_url;&amp;#13;
+var dt_api_key = workflow.scratchpad.dynatrace_api_key;&amp;#13;
+&amp;#13;
+//workflow.info("dynatrace url is: " + dt_tenant);&amp;#13;
+&amp;#13;
+var additional_info = current.alert.additional_info;&amp;#13;
+var keptn_data = JSON.parse(additional_info);&amp;#13;
+&amp;#13;
+//workflow.info("keptn service: " + keptn_data.KeptnService);&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setHttpMethod("get");&amp;#13;
+    restMessage.setHttpTimeout(10000);&amp;#13;
+    restMessage.setEndpoint(dt_tenant + "/api/v1/events?eventType=CUSTOM_CONFIGURATION&amp;amp;tag=keptn_service:" + keptn_data.KeptnService + "&amp;amp;tag=keptn_stage:" + keptn_data.KeptnStage + "&amp;amp;tag=keptn_project:" + keptn_data.KeptnProject + "&amp;amp;api-token=" + dt_api_key);&amp;#13;
+    restMessage.setRequestHeader("Content-Type", "application/json");&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    var message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info("config event response: " + httpResponseBody);&amp;#13;
+//workflow.info("dt status code: " + httpResponseStatus);&amp;#13;
+&amp;#13;
+var obj = JSON.parse(httpResponseBody);&amp;#13;
+var events = obj.events;&amp;#13;
+&amp;#13;
+//workflow.info("remediation provider: " + events[0].customProperties.RemediationProvider);&amp;#13;
+&amp;#13;
+for (var i = 0; i &amp;lt; events.length; i++) {&amp;#13;
+    var event = events[i];&amp;#13;
+    var remediation_provider = event.customProperties.RemediationProvider;&amp;#13;
+    var remediation_action = event.customProperties.RemediationAction.toLowerCase();&amp;#13;
+    var remediation_url = event.customProperties.RemediationUrl;&amp;#13;
+&amp;#13;
+    if (remediation_provider.includes("service-now") &amp;amp;&amp;amp; remediation_action.includes("disable promotion")) {&amp;#13;
+        workflow.scratchpad.remediation_url = remediation_url;&amp;#13;
+		break;&amp;#13;
+    }&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info ('remedation url: ' + workflow.scratchpad.remediation_url);&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Get remediation URL"&gt;0443d43fdbfe4410831bb080399619e4&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8843d43fdbfe4410831bb080399619e4&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Run Script"&gt;db8c65aec0a8016501d00259bc7203a4&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;8&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Get Required Credentials&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8843d43fdbfe4410831bb080399619e2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;191&lt;/x&gt;&lt;y&gt;80&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=8843d43fdbfe4410831bb080399619e2"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;8843d43fdbfe4410831bb080399619e2&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0c43d43fdbfe4410831bb080399619e2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var provider = new sn_cc.StandardCredentialsProvider();&amp;#13;
+var credentials = provider.getCredentials(["basic_auth"]);&amp;#13;
+for (var i = 0; i &amp;lt; credentials.length; i++) {&amp;#13;
+    var credential = credentials[i];&amp;#13;
+    var cred_name = credential.getAttribute("name");&amp;#13;
+    var cred_user_name = credential.getAttribute("user_name");&amp;#13;
+    var cred_password = credential.getAttribute("password");&amp;#13;
+    cred_name.trim();&amp;#13;
+    if (cred_name == "dynatrace_keptn") {&amp;#13;
+        workflow.scratchpad.dynatrace_cred_name = cred_name;&amp;#13;
+        workflow.scratchpad.dynatrace_url = "https://" + cred_user_name;&amp;#13;
+        workflow.scratchpad.dynatrace_api_key = cred_password;&amp;#13;
+    }&amp;#13;
+    if (cred_name == "keptn") {&amp;#13;
+        workflow.scratchpad.keptn_cred_name = cred_name;&amp;#13;
+        workflow.scratchpad.keptn_url = "http://" + cred_user_name;&amp;#13;
+        workflow.scratchpad.keptn_api = cred_password;&amp;#13;
+    }&amp;#13;
+&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info("dynatrace url is: " + workflow.scratchpad.dynatrace_url);&amp;#13;
+//workflow.info("dynatrace api key is: " + workflow.scratchpad.dynatrace_api_key);&amp;#13;
+//workflow.info("keptn url is: " + workflow.scratchpad.keptn_url);&amp;#13;
+//workflow.info("keptn api key is: " + workflow.scratchpad.keptn_api_key);&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;8843d43fdbfe4410831bb080399619e2&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0c43d43fdbfe4410831bb080399619e2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var provider = new sn_cc.StandardCredentialsProvider();&amp;#13;
+var credentials = provider.getCredentials(["basic_auth"]);&amp;#13;
+for (var i = 0; i &amp;lt; credentials.length; i++) {&amp;#13;
+    var credential = credentials[i];&amp;#13;
+    var cred_name = credential.getAttribute("name");&amp;#13;
+    var cred_user_name = credential.getAttribute("user_name");&amp;#13;
+    var cred_password = credential.getAttribute("password");&amp;#13;
+    cred_name.trim();&amp;#13;
+    if (cred_name == "dynatrace_keptn") {&amp;#13;
+        workflow.scratchpad.dynatrace_cred_name = cred_name;&amp;#13;
+        workflow.scratchpad.dynatrace_url = "https://" + cred_user_name;&amp;#13;
+        workflow.scratchpad.dynatrace_api_key = cred_password;&amp;#13;
+    }&amp;#13;
+    if (cred_name == "keptn") {&amp;#13;
+        workflow.scratchpad.keptn_cred_name = cred_name;&amp;#13;
+        workflow.scratchpad.keptn_url = "http://" + cred_user_name;&amp;#13;
+        workflow.scratchpad.keptn_api = cred_password;&amp;#13;
+    }&amp;#13;
+&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info("dynatrace url is: " + workflow.scratchpad.dynatrace_url);&amp;#13;
+//workflow.info("dynatrace api key is: " + workflow.scratchpad.dynatrace_api_key);&amp;#13;
+//workflow.info("keptn url is: " + workflow.scratchpad.keptn_url);&amp;#13;
+//workflow.info("keptn api key is: " + workflow.scratchpad.keptn_api_key);&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Get Required Credentials"&gt;8843d43fdbfe4410831bb080399619e2&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0043d43fdbfe4410831bb080399619e3&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="If"&gt;98f621ca0a0a0b5900f7c291f5e45a0e&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;11&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Is remediation URL available?&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;cc43d43fdbfe4410831bb080399619dc&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;753&lt;/x&gt;&lt;y&gt;69&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=cc43d43fdbfe4410831bb080399619dc"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;cc43d43fdbfe4410831bb080399619dc&lt;/document_key&gt;&lt;order&gt;300&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4843d43fdbfe4410831bb080399619dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;remediation_url = workflow.scratchpad.remediation_url;&amp;#13;
+&amp;#13;
+answer = checkRemediationUrl();&amp;#13;
+&amp;#13;
+function checkRemediationUrl() {&amp;#13;
+    if (remediation_url &amp;amp;&amp;amp; remediation_url != "")  {&amp;#13;
+        return 'yes';&amp;#13;
+    }&amp;#13;
+    return 'no';&amp;#13;
+}&lt;/value&gt;&lt;variable display_value=""&gt;c35e50810a0a0ba96248a709b450fc32&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;cc43d43fdbfe4410831bb080399619dc&lt;/document_key&gt;&lt;order&gt;200&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8443d43fdbfe4410831bb080399619dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;1&lt;/value&gt;&lt;variable display_value=""&gt;493d2c1d0a6a803f3217a75738ea3289&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;cc43d43fdbfe4410831bb080399619dc&lt;/document_key&gt;&lt;order&gt;100&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c043d43fdbfe4410831bb080399619dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value/&gt;&lt;variable display_value=""&gt;493cba6a0a6a803f07df24b118473551&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;cc43d43fdbfe4410831bb080399619dc&lt;/document_key&gt;&lt;order&gt;100&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c043d43fdbfe4410831bb080399619dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value/&gt;&lt;variable display_value=""&gt;493cba6a0a6a803f07df24b118473551&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;cc43d43fdbfe4410831bb080399619dc&lt;/document_key&gt;&lt;order&gt;200&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8443d43fdbfe4410831bb080399619dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;1&lt;/value&gt;&lt;variable display_value=""&gt;493d2c1d0a6a803f3217a75738ea3289&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;cc43d43fdbfe4410831bb080399619dc&lt;/document_key&gt;&lt;order&gt;300&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4843d43fdbfe4410831bb080399619dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;remediation_url = workflow.scratchpad.remediation_url;&amp;#13;
+&amp;#13;
+answer = checkRemediationUrl();&amp;#13;
+&amp;#13;
+function checkRemediationUrl() {&amp;#13;
+    if (remediation_url &amp;amp;&amp;amp; remediation_url != "")  {&amp;#13;
+        return 'yes';&amp;#13;
+    }&amp;#13;
+    return 'no';&amp;#13;
+}&lt;/value&gt;&lt;variable display_value=""&gt;c35e50810a0a0ba96248a709b450fc32&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Is remediation URL available?"&gt;cc43d43fdbfe4410831bb080399619dc&lt;/activity&gt;&lt;condition&gt;activity.result == 'no'&lt;/condition&gt;&lt;condition_default display_value="No"&gt;c1eff6430a0a0b59000f955abe842c94&lt;/condition_default&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;false&lt;/is_positive&gt;&lt;name&gt;No&lt;/name&gt;&lt;order&gt;200&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;true&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;cc43d43fdbfe4410831bb080399619dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Is remediation URL available?"&gt;cc43d43fdbfe4410831bb080399619dc&lt;/activity&gt;&lt;condition&gt;activity.result == 'yes'&lt;/condition&gt;&lt;condition_default display_value="Yes"&gt;c1ef63200a0a0b59005ef89bae78feb7&lt;/condition_default&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Yes&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4043d43fdbfe4410831bb080399619de&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Run Script"&gt;db8c65aec0a8016501d00259bc7203a4&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;7&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Send configuration change cloud event to keptn&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;37335477dbbe4410831bb08039961926&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:37:58&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;1349&lt;/x&gt;&lt;y&gt;251&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=37335477dbbe4410831bb08039961926"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;37335477dbbe4410831bb08039961926&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;bb335477dbbe4410831bb08039961926&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:01:22&lt;/sys_updated_on&gt;&lt;value&gt;var keptn_url = workflow.scratchpad.keptn_url;&amp;#13;
+var keptn_api_key = workflow.scratchpad.keptn_api;&amp;#13;
+&amp;#13;
+var d = new GlideDateTime();&amp;#13;
+var ms = d.getNumericValue();&amp;#13;
+var iso_time = new Date(ms).toISOString();&amp;#13;
+//workflow.info("iso time is:" + iso_time);&amp;#13;
+&amp;#13;
+var additional_info = current.alert.additional_info;&amp;#13;
+var keptn_data = JSON.parse(additional_info);&amp;#13;
+&amp;#13;
+//workflow.info("keptn service: " + keptn_data.KeptnService);&amp;#13;
+&amp;#13;
+var body = {&amp;#13;
+    "contenttype": "application/json",&amp;#13;
+    "data": {&amp;#13;
+        "labels": null,&amp;#13;
+        "project": keptn_data.KeptnProject,&amp;#13;
+        "service": keptn_data.KeptnService,&amp;#13;
+        "stage": "",&amp;#13;
+        "valuesCanary": {}&amp;#13;
+    },&amp;#13;
+    "id": "",&amp;#13;
+    "source": "",&amp;#13;
+    "specversion": "0.2",&amp;#13;
+    "time": "",&amp;#13;
+    "type": "sh.keptn.event.configuration.change",&amp;#13;
+    "shkeptncontext": ""&amp;#13;
+};&amp;#13;
+&amp;#13;
+//workflow.info("body: " + JSON.stringify(body));&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setHttpMethod("post");&amp;#13;
+    restMessage.setLogLevel("all");&amp;#13;
+    restMessage.setHttpTimeout(10000);&amp;#13;
+    restMessage.setEndpoint(keptn_url + "/v1/event");&amp;#13;
+    restMessage.setRequestHeader("Content-Type", "application/json");&amp;#13;
+    restMessage.setRequestHeader("Accept", "application/json");&amp;#13;
+    restMessage.setRequestHeader("x-token", keptn_api_key);&amp;#13;
+    restMessage.setRequestBody(JSON.stringify(body));&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;37335477dbbe4410831bb08039961926&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;bb335477dbbe4410831bb08039961926&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:01:22&lt;/sys_updated_on&gt;&lt;value&gt;var keptn_url = workflow.scratchpad.keptn_url;&amp;#13;
+var keptn_api_key = workflow.scratchpad.keptn_api;&amp;#13;
+&amp;#13;
+var d = new GlideDateTime();&amp;#13;
+var ms = d.getNumericValue();&amp;#13;
+var iso_time = new Date(ms).toISOString();&amp;#13;
+//workflow.info("iso time is:" + iso_time);&amp;#13;
+&amp;#13;
+var additional_info = current.alert.additional_info;&amp;#13;
+var keptn_data = JSON.parse(additional_info);&amp;#13;
+&amp;#13;
+//workflow.info("keptn service: " + keptn_data.KeptnService);&amp;#13;
+&amp;#13;
+var body = {&amp;#13;
+    "contenttype": "application/json",&amp;#13;
+    "data": {&amp;#13;
+        "labels": null,&amp;#13;
+        "project": keptn_data.KeptnProject,&amp;#13;
+        "service": keptn_data.KeptnService,&amp;#13;
+        "stage": "",&amp;#13;
+        "valuesCanary": {}&amp;#13;
+    },&amp;#13;
+    "id": "",&amp;#13;
+    "source": "",&amp;#13;
+    "specversion": "0.2",&amp;#13;
+    "time": "",&amp;#13;
+    "type": "sh.keptn.event.configuration.change",&amp;#13;
+    "shkeptncontext": ""&amp;#13;
+};&amp;#13;
+&amp;#13;
+//workflow.info("body: " + JSON.stringify(body));&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setHttpMethod("post");&amp;#13;
+    restMessage.setLogLevel("all");&amp;#13;
+    restMessage.setHttpTimeout(10000);&amp;#13;
+    restMessage.setEndpoint(keptn_url + "/v1/event");&amp;#13;
+    restMessage.setRequestHeader("Content-Type", "application/json");&amp;#13;
+    restMessage.setRequestHeader("Accept", "application/json");&amp;#13;
+    restMessage.setRequestHeader("x-token", keptn_api_key);&amp;#13;
+    restMessage.setRequestBody(JSON.stringify(body));&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Send configuration change cloud event to keptn"&gt;37335477dbbe4410831bb08039961926&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;77335477dbbe4410831bb08039961927&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Run Script"&gt;db8c65aec0a8016501d00259bc7203a4&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;14&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Send custom configuration event to dynatrace&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 21:02:27&lt;/sys_created_on&gt;&lt;sys_id&gt;aa85183fdbfe4410831bb08039961953&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:37:42&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;1381&lt;/x&gt;&lt;y&gt;119&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=aa85183fdbfe4410831bb08039961953"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;aa85183fdbfe4410831bb08039961953&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 21:02:27&lt;/sys_created_on&gt;&lt;sys_id&gt;2e85183fdbfe4410831bb08039961953&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:37:23&lt;/sys_updated_on&gt;&lt;value&gt;var dt_tenant = workflow.scratchpad.dynatrace_url;&amp;#13;
+var dt_api_key = workflow.scratchpad.dynatrace_api_key;&amp;#13;
+var dt_auth_header = "Api-Token " + dt_api_key;&amp;#13;
+var additional_info = current.alert.additional_info;&amp;#13;
+var dt_data = JSON.parse(additional_info);&amp;#13;
+&amp;#13;
+//workflow.info("dt PID: " + problem_id);&amp;#13;
+&amp;#13;
+var body = {&amp;#13;
+    "eventType": "CUSTOM_CONFIGURATION",&amp;#13;
+    "attachRules": {&amp;#13;
+        "tagRule": {&amp;#13;
+            "meTypes": ["SERVICE"],&amp;#13;
+            "tags": [{&amp;#13;
+                    "context": "CONTEXTLESS",&amp;#13;
+                    "key": "keptn_project",&amp;#13;
+                    "value": dt_data.KeptnProject&amp;#13;
+                },&amp;#13;
+                {&amp;#13;
+                    "context": "CONTEXTLESS",&amp;#13;
+                    "key": "keptn_service",&amp;#13;
+                    "value": dt_data.KeptnService&amp;#13;
+                },&amp;#13;
+                {&amp;#13;
+                    "context": "CONTEXTLESS",&amp;#13;
+                    "key": "keptn_stage",&amp;#13;
+                    "value": dt_data.KeptnStage&amp;#13;
+                }&amp;#13;
+            ]&amp;#13;
+        }&amp;#13;
+    },&amp;#13;
+    "description": "Changed Promotion percentage",&amp;#13;
+    "configuration": "Promotion Percentage",&amp;#13;
+    "changed": 0,&amp;#13;
+    "source": "Script",&amp;#13;
+    "customProperties": {&amp;#13;
+        "RemediationProvider": "service-now.com",&amp;#13;
+        "Approver": "ServiceNow Event Management",&amp;#13;
+        "Comment": "Disabling the new promotion feature of Carts"&amp;#13;
+    }&amp;#13;
+};&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setHttpMethod("post");&amp;#13;
+    restMessage.setHttpTimeout(10000);&amp;#13;
+    restMessage.setEndpoint(dt_tenant + "/api/v1/events");&amp;#13;
+    restMessage.setRequestHeader("Authorization", dt_auth_header);&amp;#13;
+    restMessage.setRequestHeader("Content-Type", "application/json");&amp;#13;
+    restMessage.setRequestBody(JSON.stringify(body));&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    var message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info("problem update response: " + httpResponseBody);&amp;#13;
+//workflow.info("dt status code: " + httpResponseStatus);&amp;#13;
+//var obj = JSON.parse(httpResponseBody);&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;aa85183fdbfe4410831bb08039961953&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 21:02:27&lt;/sys_created_on&gt;&lt;sys_id&gt;2e85183fdbfe4410831bb08039961953&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:37:23&lt;/sys_updated_on&gt;&lt;value&gt;var dt_tenant = workflow.scratchpad.dynatrace_url;&amp;#13;
+var dt_api_key = workflow.scratchpad.dynatrace_api_key;&amp;#13;
+var dt_auth_header = "Api-Token " + dt_api_key;&amp;#13;
+var additional_info = current.alert.additional_info;&amp;#13;
+var dt_data = JSON.parse(additional_info);&amp;#13;
+&amp;#13;
+//workflow.info("dt PID: " + problem_id);&amp;#13;
+&amp;#13;
+var body = {&amp;#13;
+    "eventType": "CUSTOM_CONFIGURATION",&amp;#13;
+    "attachRules": {&amp;#13;
+        "tagRule": {&amp;#13;
+            "meTypes": ["SERVICE"],&amp;#13;
+            "tags": [{&amp;#13;
+                    "context": "CONTEXTLESS",&amp;#13;
+                    "key": "keptn_project",&amp;#13;
+                    "value": dt_data.KeptnProject&amp;#13;
+                },&amp;#13;
+                {&amp;#13;
+                    "context": "CONTEXTLESS",&amp;#13;
+                    "key": "keptn_service",&amp;#13;
+                    "value": dt_data.KeptnService&amp;#13;
+                },&amp;#13;
+                {&amp;#13;
+                    "context": "CONTEXTLESS",&amp;#13;
+                    "key": "keptn_stage",&amp;#13;
+                    "value": dt_data.KeptnStage&amp;#13;
+                }&amp;#13;
+            ]&amp;#13;
+        }&amp;#13;
+    },&amp;#13;
+    "description": "Changed Promotion percentage",&amp;#13;
+    "configuration": "Promotion Percentage",&amp;#13;
+    "changed": 0,&amp;#13;
+    "source": "Script",&amp;#13;
+    "customProperties": {&amp;#13;
+        "RemediationProvider": "service-now.com",&amp;#13;
+        "Approver": "ServiceNow Event Management",&amp;#13;
+        "Comment": "Disabling the new promotion feature of Carts"&amp;#13;
+    }&amp;#13;
+};&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setHttpMethod("post");&amp;#13;
+    restMessage.setHttpTimeout(10000);&amp;#13;
+    restMessage.setEndpoint(dt_tenant + "/api/v1/events");&amp;#13;
+    restMessage.setRequestHeader("Authorization", dt_auth_header);&amp;#13;
+    restMessage.setRequestHeader("Content-Type", "application/json");&amp;#13;
+    restMessage.setRequestBody(JSON.stringify(body));&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    var message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&amp;#13;
+&amp;#13;
+//workflow.info("problem update response: " + httpResponseBody);&amp;#13;
+//workflow.info("dt status code: " + httpResponseStatus);&amp;#13;
+//var obj = JSON.parse(httpResponseBody);&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Send custom configuration event to dynatrace"&gt;aa85183fdbfe4410831bb08039961953&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 21:02:27&lt;/sys_created_on&gt;&lt;sys_id&gt;a685183fdbfe4410831bb08039961954&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:02:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Log Message"&gt;396807940a0a0b5c00afd9f67d9fd7a2&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;3&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;start workflow&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4043d43fdbfe4410831bb080399619dc&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;29&lt;/x&gt;&lt;y&gt;164&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=4043d43fdbfe4410831bb080399619dc"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;4043d43fdbfe4410831bb080399619dc&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c043d43fdbfe4410831bb080399619dc&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;keptn hackathon demo remediation workflow started&lt;/value&gt;&lt;variable display_value=""&gt;c35dbd1a0a0a0ba96248a7092864142d&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;4043d43fdbfe4410831bb080399619dc&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c043d43fdbfe4410831bb080399619dc&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;keptn hackathon demo remediation workflow started&lt;/value&gt;&lt;variable display_value=""&gt;c35dbd1a0a0a0ba96248a7092864142d&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="start workflow"&gt;4043d43fdbfe4410831bb080399619dc&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c443d43fdbfe4410831bb080399619dc&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="Run Script"&gt;db8c65aec0a8016501d00259bc7203a4&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;5&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;update carts service&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c443d43fdbfe4410831bb080399619e3&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;946&lt;/x&gt;&lt;y&gt;71&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=c443d43fdbfe4410831bb080399619e3"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;c443d43fdbfe4410831bb080399619e3&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4843d43fdbfe4410831bb080399619e3&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var remediation_url = workflow.scratchpad.remediation_url;&amp;#13;
+workflow.info("remediation url: " + remediation_url);&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setEndpoint("http://" + remediation_url);&amp;#13;
+    restMessage.setHttpMethod("get");&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    var message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&amp;#13;
+&amp;#13;
+//add status code to scratchpad&amp;#13;
+workflow.scratchpad.carts_status_code = httpResponseStatus;&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;c443d43fdbfe4410831bb080399619e3&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4843d43fdbfe4410831bb080399619e3&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var remediation_url = workflow.scratchpad.remediation_url;&amp;#13;
+workflow.info("remediation url: " + remediation_url);&amp;#13;
+&amp;#13;
+try {&amp;#13;
+    var restMessage = new sn_ws.RESTMessageV2();&amp;#13;
+    restMessage.setEndpoint("http://" + remediation_url);&amp;#13;
+    restMessage.setHttpMethod("get");&amp;#13;
+    var response = restMessage.execute();&amp;#13;
+    httpResponseStatus = response.getStatusCode();&amp;#13;
+    httpResponseBody = response.getBody();&amp;#13;
+} catch (ex) {&amp;#13;
+    var message = ex.getMessage();&amp;#13;
+    workflow.info(message);&amp;#13;
+}&amp;#13;
+&amp;#13;
+//add status code to scratchpad&amp;#13;
+workflow.scratchpad.carts_status_code = httpResponseStatus;&lt;/value&gt;&lt;variable display_value=""&gt;c35ddef20a0a0ba96248a7090eccd518&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="update carts service"&gt;c443d43fdbfe4410831bb080399619e3&lt;/activity&gt;&lt;condition&gt;true&lt;/condition&gt;&lt;condition_default/&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Always&lt;/name&gt;&lt;order&gt;0&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4c43d43fdbfe4410831bb080399619e3&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_activity action="INSERT_OR_UPDATE"&gt;&lt;activity_definition display_value="If"&gt;98f621ca0a0a0b5900f7c291f5e45a0e&lt;/activity_definition&gt;&lt;activity_definition_updated&gt;false&lt;/activity_definition_updated&gt;&lt;databus_lookup_id&gt;12&lt;/databus_lookup_id&gt;&lt;height/&gt;&lt;input&gt;{}&lt;/input&gt;&lt;is_parent&gt;false&lt;/is_parent&gt;&lt;name&gt;Was carts service successfully updated?&lt;/name&gt;&lt;new_activity_definition/&gt;&lt;notes/&gt;&lt;out_of_date&gt;false&lt;/out_of_date&gt;&lt;parent/&gt;&lt;pinned&gt;false&lt;/pinned&gt;&lt;pinned_version/&gt;&lt;stage/&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c043d43fdbfe4410831bb080399619df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;timeout&gt;1970-01-01 00:00:00&lt;/timeout&gt;&lt;vars/&gt;&lt;width/&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;x&gt;958&lt;/x&gt;&lt;y&gt;159&lt;/y&gt;&lt;/wf_activity&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=c043d43fdbfe4410831bb080399619df"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;c043d43fdbfe4410831bb080399619df&lt;/document_key&gt;&lt;order&gt;200&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0843d43fdbfe4410831bb080399619df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;1&lt;/value&gt;&lt;variable display_value=""&gt;493d2c1d0a6a803f3217a75738ea3289&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;c043d43fdbfe4410831bb080399619df&lt;/document_key&gt;&lt;order&gt;100&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4443d43fdbfe4410831bb080399619df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value/&gt;&lt;variable display_value=""&gt;493cba6a0a6a803f07df24b118473551&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;c043d43fdbfe4410831bb080399619df&lt;/document_key&gt;&lt;order&gt;300&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c843d43fdbfe4410831bb080399619df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var carts_status_code = workflow.scratchpad.carts_status_code;&amp;#13;
+&amp;#13;
+//workflow.info("carts status code: " + carts_status_code);&amp;#13;
+&amp;#13;
+answer = checkCartsStatusCode();&amp;#13;
+&amp;#13;
+function checkCartsStatusCode() {&amp;#13;
+    if (carts_status_code == 200)  {&amp;#13;
+        return 'yes';&amp;#13;
+    }&amp;#13;
+    return 'no';&amp;#13;
+}&lt;/value&gt;&lt;variable display_value=""&gt;c35e50810a0a0ba96248a709b450fc32&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;c043d43fdbfe4410831bb080399619df&lt;/document_key&gt;&lt;order&gt;100&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4443d43fdbfe4410831bb080399619df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value/&gt;&lt;variable display_value=""&gt;493cba6a0a6a803f07df24b118473551&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;c043d43fdbfe4410831bb080399619df&lt;/document_key&gt;&lt;order&gt;200&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0843d43fdbfe4410831bb080399619df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;1&lt;/value&gt;&lt;variable display_value=""&gt;493d2c1d0a6a803f3217a75738ea3289&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;wf_activity&lt;/document&gt;&lt;document_key&gt;c043d43fdbfe4410831bb080399619df&lt;/document_key&gt;&lt;order&gt;300&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c843d43fdbfe4410831bb080399619df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;value&gt;var carts_status_code = workflow.scratchpad.carts_status_code;&amp;#13;
+&amp;#13;
+//workflow.info("carts status code: " + carts_status_code);&amp;#13;
+&amp;#13;
+answer = checkCartsStatusCode();&amp;#13;
+&amp;#13;
+function checkCartsStatusCode() {&amp;#13;
+    if (carts_status_code == 200)  {&amp;#13;
+        return 'yes';&amp;#13;
+    }&amp;#13;
+    return 'no';&amp;#13;
+}&lt;/value&gt;&lt;variable display_value=""&gt;c35e50810a0a0ba96248a709b450fc32&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Was carts service successfully updated?"&gt;c043d43fdbfe4410831bb080399619df&lt;/activity&gt;&lt;condition&gt;activity.result == 'no'&lt;/condition&gt;&lt;condition_default display_value="No"&gt;c1eff6430a0a0b59000f955abe842c94&lt;/condition_default&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;false&lt;/is_positive&gt;&lt;name&gt;No&lt;/name&gt;&lt;order&gt;200&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;true&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4043d43fdbfe4410831bb080399619e0&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_condition action="INSERT_OR_UPDATE"&gt;&lt;activity display_value="Was carts service successfully updated?"&gt;c043d43fdbfe4410831bb080399619df&lt;/activity&gt;&lt;condition&gt;activity.result == 'yes'&lt;/condition&gt;&lt;condition_default display_value="Yes"&gt;c1ef63200a0a0b59005ef89bae78feb7&lt;/condition_default&gt;&lt;condition_type&gt;standard&lt;/condition_type&gt;&lt;else_flag&gt;false&lt;/else_flag&gt;&lt;error&gt;false&lt;/error&gt;&lt;event&gt;false&lt;/event&gt;&lt;event_name/&gt;&lt;is_positive&gt;true&lt;/is_positive&gt;&lt;name&gt;Yes&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;short_description/&gt;&lt;skip_during_generate&gt;false&lt;/skip_during_generate&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;cc43d43fdbfe4410831bb080399619df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;/wf_condition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="No"&gt;4043d43fdbfe4410831bb080399619e0&lt;/condition&gt;&lt;from display_value="Was carts service successfully updated?"&gt;c043d43fdbfe4410831bb080399619df&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0043d43fdbfe4410831bb080399619e6&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="End"&gt;c443d43fdbfe4410831bb080399619de&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Yes"&gt;4043d43fdbfe4410831bb080399619e2&lt;/condition&gt;&lt;from display_value="Are credentials available?"&gt;4443d43fdbfe4410831bb080399619e1&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0043d43fdbfe4410831bb080399619e8&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="Get remediation URL"&gt;0443d43fdbfe4410831bb080399619e4&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Yes"&gt;4043d43fdbfe4410831bb080399619de&lt;/condition&gt;&lt;from display_value="Is remediation URL available?"&gt;cc43d43fdbfe4410831bb080399619dc&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0443d43fdbfe4410831bb080399619e7&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="update carts service"&gt;c443d43fdbfe4410831bb080399619e3&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;4c43d43fdbfe4410831bb080399619e3&lt;/condition&gt;&lt;from display_value="update carts service"&gt;c443d43fdbfe4410831bb080399619e3&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;0c43d43fdbfe4410831bb080399619e6&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="Was carts service successfully updated?"&gt;c043d43fdbfe4410831bb080399619df&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;a685183fdbfe4410831bb08039961954&lt;/condition&gt;&lt;from display_value="Send custom configuration event to dynatrace"&gt;aa85183fdbfe4410831bb08039961953&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 21:37:44&lt;/sys_created_on&gt;&lt;sys_id&gt;139d54bfdb328410831bb080399619dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:37:44&lt;/sys_updated_on&gt;&lt;to display_value="Send configuration change cloud event to keptn"&gt;37335477dbbe4410831bb08039961926&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;0843d43fdbfe4410831bb080399619da&lt;/condition&gt;&lt;from display_value="Begin"&gt;7333d43fdbfe4410831bb080399619da&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;4843d43fdbfe4410831bb080399619e6&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="start workflow"&gt;4043d43fdbfe4410831bb080399619dc&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="No"&gt;cc43d43fdbfe4410831bb080399619dd&lt;/condition&gt;&lt;from display_value="Is remediation URL available?"&gt;cc43d43fdbfe4410831bb080399619dc&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8043d43fdbfe4410831bb080399619e7&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="End"&gt;c443d43fdbfe4410831bb080399619de&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;8c43d43fdbfe4410831bb080399619e0&lt;/condition&gt;&lt;from display_value="Add comments to dynatrace problem"&gt;0843d43fdbfe4410831bb080399619e0&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8443d43fdbfe4410831bb080399619e6&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:37:29&lt;/sys_updated_on&gt;&lt;to display_value="Send custom configuration event to dynatrace"&gt;aa85183fdbfe4410831bb08039961953&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Yes"&gt;cc43d43fdbfe4410831bb080399619df&lt;/condition&gt;&lt;from display_value="Was carts service successfully updated?"&gt;c043d43fdbfe4410831bb080399619df&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8c43d43fdbfe4410831bb080399619e5&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="Add comments to dynatrace problem"&gt;0843d43fdbfe4410831bb080399619e0&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="No"&gt;c043d43fdbfe4410831bb080399619e2&lt;/condition&gt;&lt;from display_value="Are credentials available?"&gt;4443d43fdbfe4410831bb080399619e1&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;8c43d43fdbfe4410831bb080399619e7&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="End"&gt;c443d43fdbfe4410831bb080399619de&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;77335477dbbe4410831bb08039961927&lt;/condition&gt;&lt;from display_value="Send configuration change cloud event to keptn"&gt;37335477dbbe4410831bb08039961926&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 21:38:06&lt;/sys_created_on&gt;&lt;sys_id&gt;acbdd87fdb328410831bb0803996190d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 21:38:06&lt;/sys_updated_on&gt;&lt;to display_value="end workflow"&gt;0043d43fdbfe4410831bb080399619db&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;0043d43fdbfe4410831bb080399619e3&lt;/condition&gt;&lt;from display_value="Get Required Credentials"&gt;8843d43fdbfe4410831bb080399619e2&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c043d43fdbfe4410831bb080399619e6&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="Are credentials available?"&gt;4443d43fdbfe4410831bb080399619e1&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;8843d43fdbfe4410831bb080399619e4&lt;/condition&gt;&lt;from display_value="Get remediation URL"&gt;0443d43fdbfe4410831bb080399619e4&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c443d43fdbfe4410831bb080399619e7&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="Is remediation URL available?"&gt;cc43d43fdbfe4410831bb080399619dc&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;8843d43fdbfe4410831bb080399619db&lt;/condition&gt;&lt;from display_value="end workflow"&gt;0043d43fdbfe4410831bb080399619db&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;c843d43fdbfe4410831bb080399619e5&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="End"&gt;c443d43fdbfe4410831bb080399619de&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_transition action="INSERT_OR_UPDATE"&gt;&lt;condition display_value="Always"&gt;c443d43fdbfe4410831bb080399619dc&lt;/condition&gt;&lt;from display_value="start workflow"&gt;4043d43fdbfe4410831bb080399619dc&lt;/from&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;cc43d43fdbfe4410831bb080399619e6&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;to display_value="Get Required Credentials"&gt;8843d43fdbfe4410831bb080399619e2&lt;/to&gt;&lt;/wf_transition&gt;&lt;wf_estimated_runtime_config action="INSERT_OR_UPDATE"&gt;&lt;estimated_run_time/&gt;&lt;no_of_data_points&gt;1&lt;/no_of_data_points&gt;&lt;percentage_threshold_ert&gt;20&lt;/percentage_threshold_ert&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-12 20:52:27&lt;/sys_created_on&gt;&lt;sys_id&gt;bb335477dbbe4410831bb08039961924&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-12 20:52:27&lt;/sys_updated_on&gt;&lt;workflow_version display_value="keptn_remediation_1.0"&gt;f7335477dbbe4410831bb08039961924&lt;/workflow_version&gt;&lt;/wf_estimated_runtime_config&gt;&lt;wf_workflow_version action="update_multiple" query="workflow=2c97f2aedb920010831bb08039961924^sys_id!=f7335477dbbe4410831bb08039961924"&gt;&lt;published&gt;false&lt;/published&gt;&lt;/wf_workflow_version&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1316572965</payload_hash>
+<remote_update_set display_value="keptn_demo_1.0">900210badb130010831bb0803996195f</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-03-05 14:44:29</sys_created_on>
+<sys_id>640214badb130010831bb08039961943</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1703b56df5c0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-03-05 14:44:29</sys_updated_on>
+<table>em_remediation_task</table>
+<target_name>keptn_remediation_1.0</target_name>
+<type>Workflow</type>
+<update_domain>global</update_domain>
+<update_guid>9fcd10fff8328410cf14e74d5817c5b5</update_guid>
+<update_guid_history>9fcd10fff8328410cf14e74d5817c5b5:-1316572965,da1443272c3a441002b79e441c105c2f:1280688131,b60b81b6667200105b0c8647b15ae350:-102551813,0a0240afa8a24810486673ebd341300c:-1573728641,dcb825175a2608107fb9257027794d8f:-1531086815,c3b769934426081047694c6343c75281:1831035878,548c538b45a6c41006a9b696e7268fe6:-1297093447,c0fd80d9166280103f9348c7058eb82b:1021567411,192880c37f168010020a69eb704dfa39:-1854357035,6a1f7376ebd280108a7ae44ab914ad3f:409415093,df7efff227d280105be9496e8fad76fa:-1894412508,a354537229de4010f7ed916523f2bbe6:-2066585197,9cc24ff2675e4010a292223224f71621:87470934,7ea00332e95e40101ce415dc511941c6:-346650935,e4bb62fe389a4010dd15866855d6bb72:1326231235,a080df6a7d5600105fc3c42473a15d2b:1522583830,5fec432665560010d4e40903e2c2d459:-420729986,4df60baafc160010203baf23eca6639b:-942160801</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>em_alert_man_m2m_rule_workflow_45718c2fdba24810831bb080399619f9</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="em_alert_man_m2m_rule_workflow"><em_alert_man_m2m_rule_workflow action="INSERT_OR_UPDATE"><active>true</active><execution>1</execution><executions_limit>1</executions_limit><management_rule display_value="">ec71086bdba24810831bb0803996196b</management_rule><sys_created_by>admin</sys_created_by><sys_created_on>2020-01-30 14:41:40</sys_created_on><sys_domain>global</sys_domain><sys_id>45718c2fdba24810831bb080399619f9</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-01-30 14:41:40</sys_updated_on><workflow display_value="keptn_remediation">2c97f2aedb920010831bb08039961924</workflow></em_alert_man_m2m_rule_workflow></record_update>]]></payload>
+<payload_hash>1774800626</payload_hash>
+<remote_update_set display_value="keptn_demo_1.0">900210badb130010831bb0803996195f</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-03-05 14:44:29</sys_created_on>
+<sys_id>a00210badb130010831bb08039961960</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16ff6e688500000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-03-05 14:44:29</sys_updated_on>
+<table/>
+<target_name>45718c2fdba24810831bb080399619f9</target_name>
+<type>Remediation Workflow</type>
+<update_domain>global</update_domain>
+<update_guid>0eb18c2f11a24810064cebf3964302f1</update_guid>
+<update_guid_history>0eb18c2f11a24810064cebf3964302f1:1774800626</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>em_alert_management_rule_ec71086bdba24810831bb0803996196b</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="em_alert_management_rule"><em_alert_management_rule action="INSERT_OR_UPDATE"><active>true</active><additional_info/><alert_filter table="em_alert">source=KEPTN^node=ItemsController^descriptionLIKEFailure rate increase^ORdescriptionLIKEerror_rate<item endquery="false" field="source" goto="false" newquery="false" operator="=" or="false" value="KEPTN"/><item endquery="false" field="node" goto="false" newquery="false" operator="=" or="false" value="ItemsController"/><item endquery="false" field="description" goto="false" newquery="false" operator="LIKE" or="false" value="Failure rate increase"/><item endquery="false" field="description" goto="false" newquery="false" operator="LIKE" or="true" value="error_rate"/></alert_filter><automatic_execution_setting>1</automatic_execution_setting><description>Create Incident and Run Remediation Workflow</description><error_msg/><incident_template/><kb/><migrated_from/><multiple_alert_rules>1</multiple_alert_rules><name>Keptn - Create incident and run remediation workflow</name><order>100</order><overwrite_template/><state>2</state><submit_counter>3</submit_counter><sys_class_name>em_alert_management_rule</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-01-30 14:41:41</sys_created_on><sys_domain>global</sys_domain><sys_id>ec71086bdba24810831bb0803996196b</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Keptn - Create incident and run remediation workflow</sys_name><sys_overrides/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>em_alert_management_rule_ec71086bdba24810831bb0803996196b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-03-05 14:44:01</sys_updated_on><type>incident</type></em_alert_management_rule></record_update>]]></payload>
+<payload_hash>1976869231</payload_hash>
+<remote_update_set display_value="keptn_demo_1.0">900210badb130010831bb0803996195f</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-03-05 14:44:29</sys_created_on>
+<sys_id>d40210badb130010831bb0803996195f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>170ab27421a0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-03-05 14:44:29</sys_updated_on>
+<table/>
+<target_name>Keptn - Create incident and run remediation workflow</target_name>
+<type>Alert Management Rule</type>
+<update_domain>global</update_domain>
+<update_guid>ade1147a14130010777fea99bee10827</update_guid>
+<update_guid_history>ade1147a14130010777fea99bee10827:1976869231,c552cc6fe0a24810ae696c7788ef3476:-278779634,0ab18c2f5fa2481025d139bf116b35f7:376288890</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>em_alert_man_m2m_rule_flow_8171406fdba24810831bb08039961903</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="em_alert_man_m2m_rule_flow"><em_alert_man_m2m_rule_flow action="INSERT_OR_UPDATE"><active>true</active><execution>1</execution><executions_limit>1</executions_limit><link_to_flow_designer/><management_rule display_value="">ec71086bdba24810831bb0803996196b</management_rule><sub_flow display_value="Create Incident">45454f6193330300415c74aff67ffbfb</sub_flow><sys_created_by>admin</sys_created_by><sys_created_on>2020-01-30 14:41:40</sys_created_on><sys_domain>global</sys_domain><sys_id>8171406fdba24810831bb08039961903</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-01-30 14:41:40</sys_updated_on></em_alert_man_m2m_rule_flow></record_update>]]></payload>
+<payload_hash>-476765217</payload_hash>
+<remote_update_set display_value="keptn_demo_1.0">900210badb130010831bb0803996195f</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-03-05 14:44:29</sys_created_on>
+<sys_id>ec0210badb130010831bb0803996195f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16ff6e6888b0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-03-05 14:44:29</sys_updated_on>
+<table/>
+<target_name>8171406fdba24810831bb08039961903</target_name>
+<type>Remediation Subflow</type>
+<update_domain>global</update_domain>
+<update_guid>02b18c2f28a2481083c538ddd50bc1f4</update_guid>
+<update_guid_history>02b18c2f28a2481083c538ddd50bc1f4:-476765217</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
