@@ -36,11 +36,6 @@ RUN GOOS=linux go build -ldflags '-linkmode=external' $BUILDFLAGS -v -o servicen
 FROM alpine:3.11
 RUN apk add --no-cache ca-certificates libc6-compat
 
-ARG debugBuild
-
-# IF we are debugging, we need to install libc6-compat for delve to work on alpine based containers
-RUN if [ ! -z "$debugBuild" ]; then apk add --no-cache libc6-compat; fi
-
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /go/src/github.com/keptn-contrib/servicenow-service/servicenow-service /servicenow-service
 
