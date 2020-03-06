@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: servicenow-service
-        image: dynatraceacm/servicenow-service:0.2.0
+        image: keptncontrib/servicenow-service:0.2.0
         ports:
         - containerPort: 8080
         env:
