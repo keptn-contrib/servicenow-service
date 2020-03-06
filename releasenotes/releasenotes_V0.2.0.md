@@ -1,6 +1,6 @@
 # Release Notes 0.2.0
 
-This release is compatible with keptn release 0.2.0.
+This release is compatible with Keptn release 0.6.0.
 
 The service is designed to receive problem events from keptn and create incidents in ServiceNow. In this release, the service is capable of:
 
