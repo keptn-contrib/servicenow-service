@@ -1,12 +1,26 @@
 # ServiceNow keptn service
 
-The servicenow-service is a keptn component that can be used for create events and update alerts in ServiceNow
+Small demo for showcasing how to enable runbook automation with workflows in ServiceNow with [Keptn](https://keptn.sh).
+
+The servicenow-service is a Keptn-service that can be used for create events and update alerts in ServiceNow.
 
 The servicenow-service listens to keptn events of type:
 
-sh.keptn.events.problem.open
+- sh.keptn.events.problem.open
 
 Whenever a problem is detected by keptn, the servicenow-service will receive a sh.keptn.events.problem.open keptn event, it will then process and parse the event to then send it to the ServiceNow event API and create an alert.
+
+## Compatibility Matrix
+
+Please always double check the version of Keptn you are using compared to the version of this service, and follow the compatibility matrix below.
+
+
+| Keptn Version    | [Prometheus Service Image](https://hub.docker.com/r/keptn/servicenow-service/tags) |
+|:----------------:|:----------------------------------------:|
+|       0.4.x      | keptn/servicenow-service:0.1.3  |
+|       0.5.x      | keptn/servicenow-service:0.1.4  |
+|       0.6.x      | not compatible |
+|      develop     | not compatible |
 
 ## Installation
 
