@@ -45,9 +45,9 @@ curl -X POST \
           "tagRule" : {
             "meTypes" : ["SERVICE"],
             "tags" : [ 
-              {"context": "ENVIRONMENT", "key": "application", "value": "sockshop"},
-              {"context": "CONTEXTLESS", "key": "service", "value": "carts"},
-              {"context": "CONTEXTLESS", "key": "environment", "value": "sockshop-production"}
+              {"context": "CONTEXTLESS", "key": "keptn_project", "value": "sockshop"},
+              {"context": "CONTEXTLESS", "key": "keptn_service", "value": "carts"},
+              {"context": "CONTEXTLESS", "key": "keptn_stage", "value": "production"}
             ]
           }
         },
