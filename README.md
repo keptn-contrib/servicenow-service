@@ -19,8 +19,8 @@ Please always double check the version of Keptn you are using compared to the ve
 |:----------------:|:----------------------------------------:|
 |       0.4.x      | keptn/servicenow-service:0.1.3  |
 |       0.5.x      | keptn/servicenow-service:0.1.4  |
-|       0.6.x      | not compatible |
-|      develop     | not compatible |
+|       0.6.x      | keptn/servicenow-service:0.2.0 |
+|       0.7.2      | keptn/servicenow-service:0.2.1 |
 
 ## Installation
 
@@ -48,14 +48,10 @@ kubectl create secret generic servicenow -n keptn --from-file=servicenow-credent
 
 - Subscribe the servicenow-service to keptn sh.keptn.event.problem.open events by applying the distributor manifest:
 
-```
-kubectl apply -f deploy/distributor.yaml
-```
-
 - Deploy the servicenow-service by running the following command:
 
 ```
-kubectl apply -f deploy/service.yaml
+kubectl apply -f deploy/service.yaml -n keptn
 ```
 
 After running these commands, the servicenow-service and distributor are now deployed in your cluster. Execute the following commands to verify the deployment of the servicenow-service.
@@ -75,8 +71,7 @@ kubectl get po -n keptn | grep "servicenow"
 
 ```
 NAME                                                              READY   STATUS    RESTARTS   AGE
-servicenow-service-5b67cc545c-c2452                               1/1     Running   0          17m
-servicenow-service-open-problem-distributor-554b5d778b-vbmgv      1/1     Running   0          17m
+servicenow-service-5b67cc545c-c2452                               2/2     Running   0          17m
 ```
 
 ### Delete the ServiceNow service on the keptn namespace
@@ -84,9 +79,5 @@ servicenow-service-open-problem-distributor-554b5d778b-vbmgv      1/1     Runnin
 To delete a deployed servicenow-service and distributor, use the file deploy/service.yaml from this repository and delete the Kubernetes resources:
 
 ```
-kubectl delete -f deploy/distributor.yaml
-```
-
-```
-kubectl delete -f deploy/service.yaml
+kubectl delete -f deploy/service.yaml -n keptn
 ```
