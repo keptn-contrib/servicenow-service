@@ -56,7 +56,7 @@ spec:
       serviceAccountName: keptn-servicenow-service      
       containers:
       - name: servicenow-service
-        image: keptncontrib/servicenow-service:0.2.1
+        image: keptncontrib/servicenow-service:0.3.0
         ports:
         - containerPort: 8080
         env:
