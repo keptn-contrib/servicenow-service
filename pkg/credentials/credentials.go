@@ -10,7 +10,7 @@ import (
 )
 
 type servicenowCredentials struct {
-	Instance string `json:"SERVICENOW_INSTANCE" yaml:"SERVICENOW_INSTANCE"`
+	Instance string `json:"SERVICENOW_INSTANCE_URL" yaml:"SERVICENOW_INSTANCE_URL"`
 	User     string `json:"SERVICENOW_USER" yaml:"SERVICENOW_USER"`
 	Password string `json:"SERVICENOW_PASSWORD" yaml:"SERVICENOW_PASSWORD"`
 }
@@ -41,12 +41,12 @@ func GetServicenowCredentials() (*servicenowCredentials, error) {
 	}
 
 	if string(secret.Data["SERVICENOW_INSTANCE"]) == "" || string(secret.Data["SERVICENOW_USER"]) == "" || string(secret.Data["SERVICENOW_PASSWORD"]) == "" {
-		return nil, errors.New("invalid or no ServiceNow credentials found. Requires at least SERVICENOW_INSTANCE, SERVICENOW_USER and SERVICENOW_PASSWORD in secret!")
+		return nil, errors.New("invalid or no ServiceNow credentials found. Requires at least SERVICENOW_INSTANCE_URL, SERVICENOW_USER and SERVICENOW_PASSWORD in secret!")
 	}
 
 	snowCreds := &servicenowCredentials{}
 
-	snowCreds.Instance = strings.Trim(string(secret.Data["SERVICENOW_INSTANCE"]), "\n")
+	snowCreds.Instance = strings.Trim(string(secret.Data["SERVICENOW_INSTANCE_URL"]), "\n")
 	snowCreds.User = strings.Trim(string(secret.Data["SERVICENOW_USER"]), "\n")
 	snowCreds.Password = strings.Trim(string(secret.Data["SERVICENOW_PASSWORD"]), "\n")
 
