@@ -40,7 +40,7 @@ func GetServicenowCredentials() (*servicenowCredentials, error) {
 		return nil, err
 	}
 
-	if string(secret.Data["SERVICENOW_INSTANCE"]) == "" || string(secret.Data["SERVICENOW_USER"]) == "" || string(secret.Data["SERVICENOW_PASSWORD"]) == "" {
+	if string(secret.Data["SERVICENOW_INSTANCE_URL"]) == "" || string(secret.Data["SERVICENOW_USER"]) == "" || string(secret.Data["SERVICENOW_PASSWORD"]) == "" {
 		return nil, errors.New("invalid or no ServiceNow credentials found. Requires at least SERVICENOW_INSTANCE_URL, SERVICENOW_USER and SERVICENOW_PASSWORD in secret!")
 	}
 
