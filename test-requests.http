@@ -1,0 +1,45 @@
+# action.triggered
+POST http://localhost:8080/
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/cloudevents+json
+
+{
+    "type": "sh.keptn.event.action.triggered",
+    "specversion": "1.0",
+    "source": "https://github.com/keptn/keptn/remediation-service",
+    "id": "f2b878d3-03c0-4e8f-bc3f-454bc1b3d79d",
+    "time": "2019-06-07T07:02:15.64489Z",
+    "contenttype": "application/json",
+    "shkeptncontext": "08735340-6f9e-4b32-97ff-3b6c292bc509",
+    "data": {
+        "action": {
+            "name": "CreateIncident",
+            "action": "trigger-servicenow-flow",
+            "description": "Create Incident",
+            "value": {
+                "flowApiPath": "/api/dynat/keptn_create_incident",
+                "httpMethod": "POST",
+                "retries": 15
+            }
+        },
+        "problem": {
+            "ImpactedEntity": "carts-primary",
+            "PID": "93a5-3fas-a09d-8ckf",
+            "ProblemDetails": "Pod name",
+            "ProblemID": "762",
+            "ProblemTitle": "cpu_usage_sockshop_carts",
+            "State": "OPEN"
+        },
+        "project": "sockshop",
+        "service": "carts",
+        "stage": "staging",
+        "labels": {
+            "testId": "4711",
+            "buildId": "build-17",
+            "owner": "JohnDoe"
+        }
+    }
+}
+
+###
