@@ -8,7 +8,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"os"
 	"time"
 
 	cloudevents "github.com/cloudevents/sdk-go/v2"
@@ -74,13 +73,14 @@ func (eh ActionTriggeredHandler) HandleEvent() error {
 		httpMethod = val.(string)
 	}
 
-	if flowApiPath == "" || httpMethod == "" || retries == 0 {
-		return fmt.Errorf("mandatory values missing")
+	if flowApiPath == "" || httpMethod == "" {
+		eh.Logger.Error("mandatory values missing")
+		return err
 	}
 
 	err = triggerFlow(actionTriggeredEvent, flowApiPath, httpMethod, int(retries))
 	if err != nil {
-		msg := "Could not trigger " + flowApiPath + err.Error()
+		msg := "Could not trigger " + flowApiPath + " " + err.Error()
 		eh.Logger.Error(msg)
 		sendErr := eh.sendEvent(keptnv2.GetFinishedEventType(keptnv2.ActionTaskName),
 			eh.getActionFinishedEvent(keptnv2.ResultFailed, keptnv2.StatusErrored, *actionTriggeredEvent, msg))
@@ -129,12 +129,10 @@ func (eh ActionTriggeredHandler) getActionStartedEvent(actionTriggeredEvent kept
 }
 
 func (eh ActionTriggeredHandler) sendEvent(eventType string, data interface{}) error {
-	keptnHandler, err := keptnv2.NewKeptn(&eh.Event, keptn.KeptnOpts{
-		EventBrokerURL: os.Getenv("EVENTBROKER"),
-	})
+	keptnHandler, err := keptnv2.NewKeptn(&eh.Event, keptn.KeptnOpts{})
+
 	if err != nil {
-		eh.Logger.Error("Could not initialize Keptn handler: " + err.Error())
-		return err
+		return errors.New("Failed to initialize Keptn handler: " + err.Error())
 	}
 
 	source, _ := url.Parse("servicenow-service")
@@ -148,15 +146,21 @@ func (eh ActionTriggeredHandler) sendEvent(eventType string, data interface{}) e
 	event.SetData(cloudevents.ApplicationJSON, data)
 
 	err = keptnHandler.SendCloudEvent(event)
+
 	if err != nil {
 		eh.Logger.Error("Could not send " + eventType + " event: " + err.Error())
 		return err
 	}
+
 	return nil
 }
 
 // ToggleFeature sets a value for a feature flag
 func triggerFlow(actionEvent *keptnv2.ActionTriggeredEventData, flowApiPath string, httpMethod string, retries int) error {
+
+	if retries == 0 {
+		retries = 10
+	}
 
 	creds, err := credentials.GetServicenowCredentials()
 	if err != nil {
@@ -217,15 +221,17 @@ func waitForFlowExecution(snowInstanceURL string, flowContextExecID string, snow
 		flowState := value.String()
 
 		if flowState == "WAITING" || flowState == "IN_PROGRESS" || flowState == "QUEUED" || flowState == "CONTINUE_SYNC	" {
-			fmt.Printf("Flow State: %v" + flowState)
+			fmt.Println("Flow State: " + flowState)
 			fmt.Printf("Flow execution not yet complete sleeping 10 seconds before retry, %v retries left\n", retries)
 			time.Sleep(30 * time.Second)
 			retries -= 1
 		} else if flowState == "ERROR" || flowState == "CANCELLED" {
 			return fmt.Errorf("Flow execution completed with failure, response code %s. State value from API call: %s", resp.Status, string(body))
-		} else {
+		} else if flowState == "COMPLETE" {
 			fmt.Println("Flow execution completed, state value from API: " + flowState)
 			return nil
+		} else {
+			return fmt.Errorf("Flow execution completed with failure")
 		}
 
 	}
