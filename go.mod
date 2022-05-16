@@ -7,8 +7,7 @@ require (
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/keptn/go-utils v0.8.4
 	github.com/mitchellh/mapstructure v1.3.3
-	github.com/tidwall/gjson v1.8.0
-	github.com/tidwall/pretty v1.2.0 // indirect
+	github.com/tidwall/gjson v1.9.3
 	k8s.io/apimachinery v0.17.0
 	k8s.io/client-go v0.17.0
 )
